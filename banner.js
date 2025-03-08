@@ -80,8 +80,8 @@ const validateStack = () => {
     } else if (index !== -1) {
         selectedStack.splice(index, 1);
         displayStack();
-        return false;
     }
+
 
     
     
@@ -105,18 +105,35 @@ const displayStack = () => {
         stackName.classList.add("stackName");
         stackName.textContent = stack.name;
 
+        const delBtn = document.createElement("button");
+        delBtn.classList.add("delBtn");
+        delBtn.textContent = "x";
+        delBtn.setAttribute("data-stack", `${stack.name}`);
+
         div.appendChild(stackIcon);
         div.appendChild(stackName);
+        div.appendChild(delBtn);
         stackPreview.appendChild(div);
     }
 
-    const delBtn = document.createElement("button");
-    delBtn.textContent = "Delete";
-    document.querySelector(".stackAndIconWrapper").appendChild(delBtn);
+    const delBtns = document.querySelectorAll(".delBtn");
+    for (let delBtn of delBtns ) {
+        delBtn.addEventListener("click", () => {
+            const stackToRemove = delBtn.getAttribute('data-stack');
+            console.log(stackToRemove);
+            removeStack(stackToRemove);
+            console.log(selectedStack)
+        });
+    }
 
-    delBtn.addEventListener("click", () => {
-        alert("Deleted")
-    })
+}
+
+const removeStack = (stackName) => {
+    const index = selectedStack.findIndex((stack) => stack.name === stackName);
+    if (index !== -1) {
+        selectedStack.splice(index, 1);
+        displayStack();
+    }
 }
 
 
