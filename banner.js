@@ -3,8 +3,8 @@ const userForm = document.querySelector(".userForm");
 const stackPreview = document.querySelector(".stackPreview");
 const stackSelect = document.querySelector(".stackSelect");
 
-// Creating an array object to hold stack list and image
-let stackArray = [
+// Creating an array object to hold stack list and icon
+let stacksArray = [
     {
         name: "Html",
         icon: `<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,3 +49,18 @@ let stackArray = [
     },
 ]
 
+// Dynamically loading my stack array to page
+
+const loadStackArray = () => {
+    for (let stack of stacksArray) {
+        const option = document.createElement("option");
+        option.value = stack.name;
+        option.textContent = stack.name;
+        stackSelect.appendChild(option);
+    }
+}
+
+// Loading stack array upon page load
+document.addEventListener("DOMContentLoaded", () => {
+    loadStackArray();
+});
