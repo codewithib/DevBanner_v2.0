@@ -50,17 +50,78 @@ let stacksArray = [
 ]
 
 // Dynamically loading my stack array to page
-
 const loadStackArray = () => {
     for (let stack of stacksArray) {
         const option = document.createElement("option");
         option.value = stack.name;
         option.textContent = stack.name;
         stackSelect.appendChild(option);
+        console.log(stack.name)
     }
 }
+
+// Global empty array to store selected stack
+let selectedStack = [];
+
+// Validating if a stack is selected
+const validateStack = () => {
+    
+    
+    const selectedValue = stackSelect.value;
+    const index = selectedStack.findIndex((stack) => stack.name === selectedValue);// Check if a stack already exist
+    
+    if (index === -1) {
+        const stackObj = stacksArray.find((stack) => stack.name === selectedValue);
+        if(stackObj) {
+            selectedStack.push(stackObj);
+            displayStack();
+        } 
+        
+    } else {
+        selectedStack.splice(index, 1);
+        displayStack();
+    }
+
+    
+    
+    console.log(selectedStack)
+    console.log(index);
+}
+
+// Populating selected stack
+const displayStack = () => {
+    stackPreview.innerHTML = "";
+
+    for (let stack of selectedStack) {
+        const div = document.createElement("div");
+        div.classList.add("stackAndIconWrapper");
+
+        const stackIcon = document.createElement("span");
+        stackIcon.classList.add("stackIcon");
+        stackIcon.innerHTML = stack.icon;
+
+        const stackName = document.createElement("p");
+        stackName.classList.add("stackName");
+        stackName.textContent = stack.name;
+
+
+
+        div.appendChild(stackIcon);
+        div.appendChild(stackName);
+        stackPreview.appendChild(div);
+
+    }
+}
+
+
 
 // Loading stack array upon page load
 document.addEventListener("DOMContentLoaded", () => {
     loadStackArray();
 });
+
+// Adding event listener to listen to selectedStack
+
+stackSelect.addEventListener("change", () => {
+    validateStack();
+})
