@@ -12,12 +12,17 @@
             <form class="userForm" novalidate>
                 <label for="stack-select">Tech Stack(s)</label>
                 <div class="stackPreview"></div>
+                <label for="search"><input type="search"> <button class="dropdownBtn">^</button></label>
                 <select name="stack-select" id="stack-select" class="stackSelect" multiple required>
-                    <!-- <option value="">Select Stack</option> -->
+                    <option value="" disabled>Select Stack</option>
                 </select>
+                <p class="countSelected"></p>
+                
 
                 <button type="submit">submit</button>
             </form>
+
+            <!-- <button class="downloadBtn">download data</button> -->
         </div>
     </main>
     

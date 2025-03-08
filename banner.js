@@ -47,6 +47,13 @@ let stacksArray = [
                     <path d="M64.0039 25.602C46.9369 25.602 36.2739 34.132 32.0039 51.199C38.4019 42.668 45.8709 39.469 54.4019 41.602C59.2729 42.816 62.7539 46.348 66.6089 50.262C72.8829 56.629 80.1449 64 96.0039 64C113.07 64 123.734 55.469 128.004 38.398C121.605 46.934 114.137 50.133 105.605 48C100.735 46.785 97.2579 43.254 93.3979 39.34C87.1279 32.973 79.8679 25.602 64.0039 25.602ZM32.0039 64C14.9379 64 4.27391 72.531 0.00390625 89.602C6.40191 81.066 13.8699 77.867 22.4019 80C27.2729 81.215 30.7539 84.746 34.6089 88.66C40.8829 95.027 48.1449 102.398 64.0039 102.398C81.0699 102.398 91.7339 93.868 96.0039 76.801C89.6049 85.332 82.1369 88.531 73.6049 86.398C68.7349 85.184 65.2579 81.652 61.3979 77.738C55.1279 71.371 47.8679 64 32.0039 64Z" fill="#38B2AC"/>
                 </svg>`,
     },
+
+    {
+        name: "Next.js",
+        icon: `<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M64 0C28.7 0 0 28.7 0 64C0 99.3 28.7 128 64 128C75.2 128 85.7 125.1 94.8 120.1L48.4 55.3V91.9H41.6V41.8H48.4L98.9 117.6C116.4 106.2 128 86.5 128 64C128 28.7 99.3 0 64 0ZM86.1 84.6L78.6 73.3V41.8H86.1V84.6Z" fill="black"/>
+                </svg>`,
+    },
 ]
 
 // Dynamically loading my stack array to page
@@ -58,36 +65,58 @@ const loadStackArray = () => {
         stackSelect.appendChild(option);
         console.log(stack.name)
     }
+
+    stackSelect.style.display = "none";
+    
 }
+
+
 
 // Global empty array to store selected stack
 let selectedStack = [];
 
 // Validating if a stack is selected
 const validateStack = () => {
-    
-    
     const selectedValue = stackSelect.value;
     const index = selectedStack.findIndex((stack) => stack.name === selectedValue);// Check if a stack already exist
     
-    if (index === -1) {
+    if (index === -1 && selectedValue !== "") {
+        if (selectedStack.length >= 5) {
+            console.log()
+            return;
+        }
         const stackObj = stacksArray.find((stack) => stack.name === selectedValue);
         if(stackObj) {
             selectedStack.push(stackObj);
             displayStack();
+            countSelectedStack();
         } 
         
     } else if (index !== -1) {
         selectedStack.splice(index, 1);
         displayStack();
+        countSelectedStack();
     }
-
-
-    
     
     console.log(selectedStack)
     console.log(index);
 }
+
+// Function to count selected stack
+const countSelectedStack = () => {
+    
+    const countSelected = document.querySelector(".countSelected");
+    const count = selectedStack.length;
+    countSelected.textContent = `Selected: ${count}/5`;
+}
+
+
+
+const dropdownBtn = document.querySelector(".dropdownBtn");
+
+dropdownBtn.addEventListener("click", () => {
+   stackSelect.style.display = stackSelect.style.display === "none" ? "block" : "none";
+});
 
 // Populating selected stack
 const displayStack = () => {
@@ -133,6 +162,7 @@ const removeStack = (stackName) => {
     if (index !== -1) {
         selectedStack.splice(index, 1);
         displayStack();
+        countSelectedStack();
     }
 }
 
@@ -141,6 +171,7 @@ const removeStack = (stackName) => {
 // Loading stack array upon page load
 document.addEventListener("DOMContentLoaded", () => {
     loadStackArray();
+    countSelectedStack()
 });
 
 // Adding event listener to listen to selectedStack
@@ -152,6 +183,5 @@ stackSelect.addEventListener("change", (e) => {
 
 userForm.addEventListener("submit", (e) => {
     if (e) e.preventDefault();
-})
-
+});
 
