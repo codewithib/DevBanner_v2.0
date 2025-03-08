@@ -9,12 +9,14 @@
 <body>
     <main>
         <div class="container">
-            <form class="userForm">
+            <form class="userForm" novalidate>
                 <label for="stack-select">Tech Stack(s)</label>
                 <div class="stackPreview"></div>
-                <select name="stack-select" id="stack-select" class="stackSelect" multiple>
+                <select name="stack-select" id="stack-select" class="stackSelect" multiple required>
                     <option value="">Select Stack</option>
                 </select>
+
+                <button type="submit">submit</button>
             </form>
         </div>
     </main>

@@ -77,9 +77,10 @@ const validateStack = () => {
             displayStack();
         } 
         
-    } else {
+    } else if (index !== -1) {
         selectedStack.splice(index, 1);
         displayStack();
+        return false;
     }
 
     
@@ -104,13 +105,18 @@ const displayStack = () => {
         stackName.classList.add("stackName");
         stackName.textContent = stack.name;
 
-
-
         div.appendChild(stackIcon);
         div.appendChild(stackName);
         stackPreview.appendChild(div);
-
     }
+
+    const delBtn = document.createElement("button");
+    delBtn.textContent = "Delete";
+    document.querySelector(".stackAndIconWrapper").appendChild(delBtn);
+
+    delBtn.addEventListener("click", () => {
+        alert("Deleted")
+    })
 }
 
 
@@ -122,6 +128,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Adding event listener to listen to selectedStack
 
-stackSelect.addEventListener("change", () => {
+stackSelect.addEventListener("change", (e) => {
+    e.preventDefault();
     validateStack();
+});
+
+userForm.addEventListener("submit", (e) => {
+    if (e) e.preventDefault();
 })
+
+
