@@ -75,16 +75,20 @@ const loadStackArray = () => {
 // Global empty array to store selected stack
 let selectedStack = [];
 
+const countError = document.querySelector(".countError");
+
 // Validating if a stack is selected
 const validateStack = () => {
     const selectedValue = stackSelect.value;
     const index = selectedStack.findIndex((stack) => stack.name === selectedValue);// Check if a stack already exist
+
+    
     
     if (index === -1 && selectedValue !== "") {
         if (selectedStack.length >= 5) {
-            console.log()
+            countError.textContent = "You cannot select more than five(5) stack";
             return;
-        }
+        } 
         const stackObj = stacksArray.find((stack) => stack.name === selectedValue);
         if(stackObj) {
             selectedStack.push(stackObj);
@@ -96,10 +100,13 @@ const validateStack = () => {
         selectedStack.splice(index, 1);
         displayStack();
         countSelectedStack();
+        countError.textContent = "";
     }
     
     console.log(selectedStack)
     console.log(index);
+
+    
 }
 
 // Function to count selected stack
@@ -163,6 +170,8 @@ const removeStack = (stackName) => {
         selectedStack.splice(index, 1);
         displayStack();
         countSelectedStack();
+        countError.textContent = "";
+        
     }
 }
 
