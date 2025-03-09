@@ -218,10 +218,16 @@ const formValidator = () => {
     }
 }
 
+const changeDisplayAndCaret = () => {
+    const isDiplayNone = stackSelect.style.display === "none";
+    stackSelect.style.display = isDiplayNone ? "block" : "none";
 
-dropdownBtn.addEventListener("click", () => {
-   stackSelect.style.display = stackSelect.style.display === "none" ? "block" : "none";
-});
+    const isCaretUp = dropdownBtn.textContent === "^";
+    dropdownBtn.textContent = isCaretUp ? "⌄" : "^";
+}
+
+
+
 
 // Populating selected stack
 const displayStack = () => {
@@ -290,7 +296,7 @@ searchInput.addEventListener("input", () => {
 });
 
 searchInput.addEventListener("click", () => {
-    stackSelect.style.display = stackSelect.style.display === "none" ? "block" : "none";
+    stackSelect.style.display = "block";
 });
 
 // Adding event listener to listen to selectedStack
@@ -311,6 +317,12 @@ fieldInput.addEventListener("input", () => {
 userForm.addEventListener("submit", (e) => {
     if (e) e.preventDefault();
     // formValidator();
+});
+
+// DropdownBtn event listener
+dropdownBtn.addEventListener("click", () => {
+    changeDisplayAndCaret();
+
 });
 
 
