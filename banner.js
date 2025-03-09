@@ -52,22 +52,6 @@ let stacksArray = [
     },
 ]
 
-// Dynamically loading my stack array to page
-const loadStackArray = () => {
-    for (let stack of stacksArray) {
-        const option = document.createElement("option");
-        option.value = stack.name;
-        option.textContent = stack.name;
-        stackSelect.appendChild(option);
-        console.log(stack.name)
-    }
-
-    stackSelect.style.display = "none";
-    
-}
-
-
-
 // Global empty array to store selected stack && gloable variables from DOM
 let selectedStack = [];
 
@@ -83,12 +67,63 @@ const stackSelect = document.querySelector(".stackSelect");
 const countSelected = document.querySelector(".countSelected");
 const generateBtn = document.querySelector(".submit");
 
+const disabledStack = document.querySelector(".disabledStack");
+
 // Error field from DOM
 const errorForName = document.querySelector(".errorForName");
 const errorForField = document.querySelector(".errorForField");
 const errorForTwitter = document.querySelector(".errorForTwitter");
 const errorForGitHub = document.querySelector(".errorForGitHub");
 const countError = document.querySelector(".countError");
+
+
+
+// Dynamically loading my stack array to page
+const loadStackArray = () => {
+    for (let stack of stacksArray) {
+        const option = document.createElement("option");
+        option.value = stack.name;
+        option.textContent = stack.name;
+        option.classList.add("dropDownItem");
+        stackSelect.appendChild(option);
+        // console.log(stack.name)
+    }
+
+    stackSelect.style.display = "none";  
+}
+
+const searchStack = () => {
+    
+    const userSearch = searchInput.value.toLowerCase().trim();
+
+    let searchArray = [];
+
+    searchArray = stacksArray.filter((stack) => {
+        return stack.name.toLowerCase().startsWith(userSearch);
+    });
+
+    console.log(searchArray);
+    stackSelect.innerHTML = `<option value="" disabled class="disabledStack">Select Stack</option>`
+
+    if (searchArray.length > 0) {
+        for (let stack of searchArray) {
+            const option = document.createElement("option");
+            option.value = stack.name;
+            option.textContent = stack.name;
+            option.classList.add("dropDownItem");
+            stackSelect.appendChild(option);
+        }
+
+        stackSelect.style.display = "block";
+    } else {
+        const option = document.createElement("option");
+        option.value = ""
+        option.textContent = "Oops, no matching stack found";
+        option.disabled = true;
+        stackSelect.appendChild(option);
+        stackSelect.style.display = "block";
+    }
+}
 
 
 
@@ -243,7 +278,19 @@ const removeStack = (stackName) => {
 // Loading stack array upon page load
 document.addEventListener("DOMContentLoaded", () => {
     loadStackArray();
-    countSelectedStack()
+    countSelectedStack();
+
+
+});
+
+// Search input event listener
+
+searchInput.addEventListener("input", () => {
+    searchStack();
+});
+
+searchInput.addEventListener("click", () => {
+    stackSelect.style.display = stackSelect.style.display === "none" ? "block" : "none";
 });
 
 // Adding event listener to listen to selectedStack
@@ -265,4 +312,6 @@ userForm.addEventListener("submit", (e) => {
     if (e) e.preventDefault();
     // formValidator();
 });
+
+
 
