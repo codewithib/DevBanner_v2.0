@@ -1,7 +1,3 @@
-// Grabbing element from dom
-const userForm = document.querySelector(".userForm");
-const stackPreview = document.querySelector(".stackPreview");
-const stackSelect = document.querySelector(".stackSelect");
 
 // Creating an array object to hold stack list and icon
 let stacksArray = [
@@ -72,10 +68,72 @@ const loadStackArray = () => {
 
 
 
-// Global empty array to store selected stack
+// Global empty array to store selected stack && gloable variables from DOM
 let selectedStack = [];
 
+const userForm = document.querySelector(".userForm");
+const nameInput = document.querySelector(".fullName");
+const fieldInput = document.querySelector(".field");
+const twitterInput = document.querySelector(".twitter");
+const githubInput = document.querySelector(".github");
+const stackPreview = document.querySelector(".stackPreview");
+const searchInput = document.querySelector(".search");
+const dropdownBtn = document.querySelector(".dropdownBtn");
+const stackSelect = document.querySelector(".stackSelect");
+const countSelected = document.querySelector(".countSelected");
+const generateBtn = document.querySelector(".submit");
+
+// Error field from DOM
+const errorForName = document.querySelector(".errorForName");
+const errorForField = document.querySelector(".errorForField");
+const errorForTwitter = document.querySelector(".errorForTwitter");
+const errorForGitHub = document.querySelector(".errorForGitHub");
 const countError = document.querySelector(".countError");
+
+
+
+// validating name inut
+const nameValidator = () => {
+    const userName = nameInput.value.trim();
+    const namePattern = /^[A-Za-zÀ-ÖØ-öø-ÿ'’-]+(?:\s[A-Za-zÀ-ÖØ-öø-ÿ'’-]+)+$/;
+    
+    if (userName === "") {
+        errorForName.textContent = "Please enter your name";
+        nameInput.classList.add("error");
+        nameInput.classList.remove("succuess");
+        return false;
+    } else if (!namePattern.test(userName)) {
+        errorForName.textContent = "Enter at least two words. Hyphens and apostrophes are allowed.";
+        nameInput.classList.add("error");
+        nameInput.classList.remove("succuess");
+        return false;
+    } else {
+        errorForName.textContent = "";
+        nameInput.classList.add("success");
+        nameInput.classList.remove("error");
+        return true;
+    }
+
+}
+
+// Validation Field input
+
+const fieldValidator = () => {
+    const userField = fieldInput.value.trim();
+
+    if (userField === "") {
+        errorForField.textContent = "Please enter your field";
+        fieldInput.classList.add("error");
+        fieldInput.classList.remove("success");
+        return false
+    } else {
+        errorForField.textContent = "";
+        fieldInput.classList.add("success");
+        fieldInput.classList.remove("error");
+        return true;
+    }
+}
+
 
 // Validating if a stack is selected
 const validateStack = () => {
@@ -111,15 +169,20 @@ const validateStack = () => {
 
 // Function to count selected stack
 const countSelectedStack = () => {
-    
-    const countSelected = document.querySelector(".countSelected");
     const count = selectedStack.length;
     countSelected.textContent = `Selected: ${count}/5`;
 }
 
 
+const formValidator = () => {
+    let isNameValid = nameValidator();
+    let isFieldValid = fieldValidator();
 
-const dropdownBtn = document.querySelector(".dropdownBtn");
+    if (isNameValid && isFieldValid) {
+        //call function to generate banner
+    }
+}
+
 
 dropdownBtn.addEventListener("click", () => {
    stackSelect.style.display = stackSelect.style.display === "none" ? "block" : "none";
@@ -190,7 +253,16 @@ stackSelect.addEventListener("change", (e) => {
     validateStack();
 });
 
+nameInput.addEventListener("input", () => {
+    nameValidator();
+});
+
+fieldInput.addEventListener("input", () => {
+    fieldValidator();
+});
+
 userForm.addEventListener("submit", (e) => {
     if (e) e.preventDefault();
+    // formValidator();
 });
 

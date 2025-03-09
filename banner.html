@@ -10,16 +10,52 @@
     <main>
         <div class="container">
             <form class="userForm" novalidate>
-                <label for="stack-select">Tech Stack(s)</label>
-                <div class="stackPreview"></div>
-                <label for="search"><input type="search"> <button class="dropdownBtn">^</button></label>
-                <select name="stack-select" id="stack-select" class="stackSelect" multiple required>
-                    <option value="" disabled>Select Stack</option>
-                </select>
-                <p class="countSelected"></p>
-                <p class="countError"></p>
-                
+                <div class="userDetails">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" name="fullName" id="fullName" class="fullName" placeholder="e.g Yusuf Ibrahim">
+                    <div class="errorMessage errorForName"></div>
+                </div>
 
+                <div class="userDetails">
+                    <label for="field">Field</label>
+                    <input type="text" name="field" id="field" class="field" placeholder="e.g Frontend & UI Developer">
+                    <div class="errorMessage errorForField"></div>
+                </div>
+
+                <div class="userDetails">
+                    <fieldset>
+                        <legend>Socials</legend>
+                        
+                        <div class="twitterWrapper">
+                            <input type="text" id="twitter" name="twitter" class="twitter" placeholder="Twitter handle">
+                            <div class="errorMessage errorForTwitter"></div>
+                        </div>
+
+                        <div class="githubWrapper">
+                            <input type="text" id="github" name="github" class="github" placeholder="Github username">
+                            <div class="errorMessage errorForGitHub"></div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="userDetails">
+                    <label for="stack-select">Tech Stack(s)</label>
+                    <div class="stackPreview"></div>
+                </div>
+
+                <div class="userDetails">
+                    <input type="search" name="search" class="search">
+                    <button class="dropdownBtn">^</button>
+                </div>
+
+                <div class="userDetails">
+                    <select name="stack-select" id="stack-select" class="stackSelect" multiple required>
+                        <option value="" disabled>Select Stack</option>
+                    </select>
+                </div>
+
+                <p class="countSelected"></p>
+                <div class="errorMessage countError"></div>
+                
                 <button type="submit">submit</button>
             </form>
 
