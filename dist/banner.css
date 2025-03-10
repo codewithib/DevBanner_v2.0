@@ -1,0 +1,79 @@
+/* Importing font */
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+/* Adding colors to my variables */
+:root {
+  --bg-color: #18082E;
+  --txt-highlight-color: #B777F4;
+  --font-color: #FFFFFF;
+  --font: "Lexend Deca", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+html, body {
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* body {
+    background: var(--bg-color);
+} */
+.container {
+  max-width: 375px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+select {
+  width: 100%;
+  padding: 0.5rem;
+  outline: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.stackPreview {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  flex: 1;
+}
+
+.stackAndIconWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.stackIcon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.stackName {
+  text-transform: lowercase;
+}
+
+/*# sourceMappingURL=banner.css.map */
