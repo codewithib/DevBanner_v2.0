@@ -69,6 +69,8 @@ const generateBtn = document.querySelector(".submit");
 
 const disabledStack = document.querySelector(".disabledStack");
 
+const searchWrapper = document.querySelector(".searchWrapper");
+
 // Error field from DOM
 const errorForName = document.querySelector(".errorForName");
 const errorForField = document.querySelector(".errorForField");
@@ -219,11 +221,36 @@ const formValidator = () => {
 }
 
 const changeDisplayAndCaret = () => {
+
     const isDiplayNone = stackSelect.style.display === "none";
     stackSelect.style.display = isDiplayNone ? "block" : "none";
 
-    const isCaretUp = dropdownBtn.textContent === "^";
-    dropdownBtn.textContent = isCaretUp ? "⌄" : "^";
+    // if(dropdownBtn.innerHTML === `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024"><path fill="currentColor" d="M8.2 751.4c0 8.6 3.4 17.401 10 24.001c13.2 13.2 34.8 13.2 48 0l451.8-451.8l445.2 445.2c13.2 13.2 34.8 13.2 48 0s13.2-34.8 0-48L542 251.401c-13.2-13.2-34.8-13.2-48 0l-475.8 475.8c-6.8 6.8-10 15.4-10 24.2z"/></svg>`) {
+    //     dropdownBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024"><path fill="currentColor" d="M831.872 340.864L512 652.672L192.128 340.864a30.59 30.59 0 0 0-42.752 0a29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728a30.59 30.59 0 0 0-42.752 0z"/></svg>`;
+    // }
+
+    if (dropdownBtn.classList.contains("dropdownBtn")) {
+        dropdownBtn.classList.remove("dropdownBtn");
+        dropdownBtn.classList.add("caretDown");
+        dropdownBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024">
+        <path fill="#fff" d="M224 384c8.6 0 17.4 3.4 24 10l264 264 264-264c13.2-13.2 34.8-13.2 48 0s13.2 34.8 0 48l-288 288c-13.2 13.2-34.8 13.2-48 0L176 442c-13.2-13.2-13.2-34.8 0-48s34.8-13.2 48 0z"></path>
+      </svg>
+      `;
+
+    } else {
+        dropdownBtn.classList.remove("caretDown");
+        dropdownBtn.classList.add("dropdownBtn");
+        dropdownBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024"><path fill="#fff" d="M8.2 751.4c0 8.6 3.4 17.401 10 24.001c13.2 13.2 34.8 13.2 48 0l451.8-451.8l445.2 445.2c13.2 13.2 34.8 13.2 48 0s13.2-34.8 0-48L542 251.401c-13.2-13.2-34.8-13.2-48 0l-475.8 475.8c-6.8 6.8-10 15.4-10 24.2z"></path></svg>`;
+    }
+
+
+
+    // let caretUp = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024"><path fill="currentColor" d="M8.2 751.4c0 8.6 3.4 17.401 10 24.001c13.2 13.2 34.8 13.2 48 0l451.8-451.8l445.2 445.2c13.2 13.2 34.8 13.2 48 0s13.2-34.8 0-48L542 251.401c-13.2-13.2-34.8-13.2-48 0l-475.8 475.8c-6.8 6.8-10 15.4-10 24.2z"/></svg>`;
+    // let caretDown = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024"><path fill="currentColor" d="M831.872 340.864L512 652.672L192.128 340.864a30.59 30.59 0 0 0-42.752 0a29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728a30.59 30.59 0 0 0-42.752 0z"/></svg>`;
+    
+    // dropdownBtn.innerHTML = caretUp;
+    // const isCaretUp = dropdownBtn.innerHTML === caretUp;
+    // dropdownBtn.innerHTML = isCaretUp ? caretDown : caretUp;
 }
 
 
@@ -286,7 +313,6 @@ document.addEventListener("DOMContentLoaded", () => {
     loadStackArray();
     countSelectedStack();
 
-
 });
 
 // Search input event listener
@@ -297,6 +323,8 @@ searchInput.addEventListener("input", () => {
 
 searchInput.addEventListener("click", () => {
     stackSelect.style.display = "block";
+    // let isBorderColorWhite = searchWrapper.style.borderColor === "rgb(255, 255, 255)";
+    searchWrapper.style.borderColor = "rgb(183, 119, 244)";
 });
 
 // Adding event listener to listen to selectedStack
