@@ -231,4 +231,9 @@ select {
   width: 100%;
 }
 
+.stackIconBanner svg {
+  width: 2rem;
+  height: 2rem;
+}
+
 /*# sourceMappingURL=banner.css.map */

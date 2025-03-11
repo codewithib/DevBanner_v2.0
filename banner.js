@@ -318,6 +318,7 @@ const displayStackBanner = () => {
     
     for (let stack of selectedStack) {
         const div = document.createElement("div");
+        div.classList.add("stackIconBanner")
         div.innerHTML = stack.icon;
         stacksWrapperBanner.appendChild(div);
     }
