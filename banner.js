@@ -78,6 +78,13 @@ const errorForTwitter = document.querySelector(".errorForTwitter");
 const errorForGitHub = document.querySelector(".errorForGitHub");
 const countError = document.querySelector(".countError");
 
+//Banner display variables -- DOM
+const fullNameBanner = document.querySelector(".fullNameBanner");
+const fieldBanner = document.querySelector(".fieldBanner");
+const twitterBanner = document.querySelector(".twitterBanner");
+const githubBanner = document.querySelector(".githubBanner");
+
+
 
 
 // Dynamically loading my stack array to page
@@ -127,6 +134,8 @@ const searchStack = () => {
     }
 }
 
+// global userInput from form
+
 
 
 // validating name inut
@@ -150,7 +159,7 @@ const nameValidator = () => {
         nameInput.classList.remove("error");
         return true;
     }
-
+    
 }
 
 // Validation Field input
@@ -253,8 +262,70 @@ const changeDisplayAndCaret = () => {
     // dropdownBtn.innerHTML = isCaretUp ? caretDown : caretUp;
 }
 
+const bannerWrapper = document.querySelector(".bannerWrapper");
+const twitterIcon = document.querySelector(".socialsBannerWrapper .twitter");
+const githubIcon = document.querySelector(".socialsBannerWrapper .github");
+const stacksWrapper = document.querySelector(".stackParentWrapper .stacksWrapper");
+const socialsBannerWrapper = document.querySelector(".socialsBannerWrapper");
+
+// function to display banner
+// const displayBanner = () => {
+//     for (stack of selectedStack) {
+//         const fullName = document.createElement("p");
+//         fullName.classList.add("fullName");
+//         fullName.textContent = userName;
+//         bannerWrapper.appendChild(fullName).before(socialsBannerWrapper);
+
+//         const field = document.createElement("p");
+//         field.classList.add("field");
+//         field.textContent = userField;
+//         bannerWrapper.appendChild(field).before(socialsBannerWrapper);
+
+//     }
+// }
+
+// Funtions to display banner starts here
 
 
+const displayName = () => {
+    const userName = nameInput.value.trim();
+    fullNameBanner.textContent = userName;
+
+}
+
+const displayField = () => {
+    const userField = fieldInput.value.trim();
+    fieldBanner.textContent = userField;
+
+}
+
+const displayTwitter = () => {
+    twitterBanner.style.display = "block";
+    const userTwitter = twitterInput.value.trim();
+    twitterBanner.textContent = userTwitter;
+}
+
+const displayGitHub = () => {
+    const userGitHub = githubInput.value.trim();
+    githubBanner.textContent = userGitHub;
+}
+
+// const stackParentWrapper = document.querySelector(".stackParentWrapper");
+const stacksWrapperBanner = document.querySelector(".stacksWrapperBanner");
+
+const displayStackBanner = () => {
+    stacksWrapperBanner.innerHTML = `<p>Stack:</p>`;
+    
+    for (let stack of selectedStack) {
+        const div = document.createElement("div");
+        div.innerHTML = stack.icon;
+        stacksWrapperBanner.appendChild(div);
+    }
+
+
+}
+
+// Funtions to display banner ends here
 
 // Populating selected stack
 const displayStack = () => {
@@ -301,6 +372,7 @@ const removeStack = (stackName) => {
         selectedStack.splice(index, 1);
         displayStack();
         countSelectedStack();
+        displayStackBanner();
         countError.textContent = "";
         
     }
@@ -312,7 +384,7 @@ const removeStack = (stackName) => {
 document.addEventListener("DOMContentLoaded", () => {
     loadStackArray();
     countSelectedStack();
-
+    twitterBanner.style.display = "none";
 });
 
 // Search input event listener
@@ -332,20 +404,34 @@ searchInput.addEventListener("click", () => {
 stackSelect.addEventListener("change", (e) => {
     e.preventDefault();
     validateStack();
+    displayStackBanner();
 });
 
 nameInput.addEventListener("input", () => {
     nameValidator();
+    displayName();
+    
 });
 
 fieldInput.addEventListener("input", () => {
     fieldValidator();
+    displayField();
+
+});
+
+twitterInput.addEventListener("input", () => {
+    displayTwitter();
+});
+
+githubInput.addEventListener("input", () => {
+    displayGitHub();
 });
 
 userForm.addEventListener("submit", (e) => {
     if (e) e.preventDefault();
     // formValidator();
 });
+
 
 // DropdownBtn event listener
 dropdownBtn.addEventListener("click", () => {
