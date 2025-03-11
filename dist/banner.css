@@ -26,25 +26,103 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* body {
-    background: var(--bg-color);
-} */
+body {
+  background: var(--bg-color);
+  color: #fff;
+}
+
 .container {
   max-width: 375px;
   width: 95%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.6rem;
+  border: 1px solid #fff;
+  padding: 0.8rem;
+  border-radius: 2rem;
+  justify-content: center;
+  max-width: 13rem;
+  margin: 0 auto;
+}
+.logo .icon-wrapper {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+.logo .icon-wrapper .icon {
+  color: var(--txt-highlight-color);
+  font-weight: 800;
+  font-size: 0.7rem;
+}
+.logo .txt {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.063rem;
 }
 
-label {
+.heading {
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.userForm .userDetails {
+  margin: 0.8rem 0;
+}
+.userForm .userDetails label {
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+.userForm .userDetails input {
+  width: 100%;
+  padding: 0.35rem;
+  outline: none;
+  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: none;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 500;
+  border-radius: 0.4rem;
+}
+.userForm .userDetails input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  opacity: 0.7;
+  font-size: 1.19rem;
+}
+.userForm .userDetails fieldset {
+  border: none;
+}
+.userForm .userDetails fieldset legend {
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+.userForm .userDetails fieldset .socialWrapper {
+  margin-bottom: 0.7rem;
+}
+.userForm .userDetails fieldset .socialWrapper .iconAndInputWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0.4rem;
+  padding-left: 0.5rem;
+}
+.userForm .userDetails fieldset .socialWrapper .iconAndInputWrapper input {
+  border: none;
 }
 
 select {
