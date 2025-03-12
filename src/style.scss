@@ -143,13 +143,30 @@ body {
 }
 
 
-select {
+.stackSelect {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.6rem 0;
     outline: none;
     font-size: 1rem;
     cursor: pointer;
+    background: #0d1b2a;
 }
+
+.stackSelect option {
+    padding: 0.4rem;
+    color: rgba($color: #fff, $alpha: 0.7);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.stackSelect option:hover {
+    background: #1F2937; 
+}
+
+// .stackSelect option:checked {
+//     background: #232040;
+//     color: #B777F4;
+// }
 
 .stackPreview {
     display: flex;
@@ -229,26 +246,39 @@ select {
     width: 1500px;
     height: 500px;
     background-color: red;
-    padding: 4rem;
-    margin-bottom: 3rem;
+    padding: 5rem;
     display: flex;
     justify-content: space-between;
     // align-items: flex-end;
     flex-direction: column;
 
     .fullNameBanner {
-        font-size: 1rem;
+        font-size: 4rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .fieldBanner {
+        font-size: 2rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
     }
 
     .socialsBannerWrapper {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 1rem;
+        margin-left: 1.2rem;
 
         .twitter, .github {
             display: flex;
             align-items: center;
             gap: 0.2rem;
+        }
+
+        .twitterBanner, .githubBanner {
+            font-size: 1.3rem;
+            font-weight: 400;
         }
         .line {
             width: 0.03rem;
@@ -263,6 +293,11 @@ select {
         gap: 0.5rem;
         align-self: flex-end;
         // justify-self: flex-end;
+    }
+
+    .stackTxt {
+        font-size: 2rem;
+        font-weight: 700;
     }
 
     .stackIconBanner {

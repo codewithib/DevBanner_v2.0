@@ -314,7 +314,7 @@ const displayGitHub = () => {
 const stacksWrapperBanner = document.querySelector(".stacksWrapperBanner");
 
 const displayStackBanner = () => {
-    stacksWrapperBanner.innerHTML = `<p>Stack:</p>`;
+    stacksWrapperBanner.innerHTML = `<p class = "stackTxt">Stack:</p>`;
     
     for (let stack of selectedStack) {
         const div = document.createElement("div");
@@ -407,6 +407,14 @@ stackSelect.addEventListener("change", (e) => {
     validateStack();
     displayStackBanner();
 });
+
+// const changeOptionColor = () => {
+//     // for (let option of options) {
+//         .style.background = "rgb(35, 32, 64)";
+//         .style.color = "rgb(183, 119, 244)";
+//     // }
+// }
+
 
 nameInput.addEventListener("input", () => {
     nameValidator();

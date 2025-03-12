@@ -125,12 +125,24 @@ body {
   border: none;
 }
 
-select {
+.stackSelect {
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.6rem 0;
   outline: none;
   font-size: 1rem;
   cursor: pointer;
+  background: #0d1b2a;
+}
+
+.stackSelect option {
+  padding: 0.4rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.stackSelect option:hover {
+  background: #1F2937;
 }
 
 .stackPreview {
@@ -203,24 +215,35 @@ select {
   width: 1500px;
   height: 500px;
   background-color: red;
-  padding: 4rem;
-  margin-bottom: 3rem;
+  padding: 5rem;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
 }
 .bannerWrapper .fullNameBanner {
-  font-size: 1rem;
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.bannerWrapper .fieldBanner {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
 .bannerWrapper .socialsBannerWrapper {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
+  margin-left: 1.2rem;
 }
 .bannerWrapper .socialsBannerWrapper .twitter, .bannerWrapper .socialsBannerWrapper .github {
   display: flex;
   align-items: center;
   gap: 0.2rem;
+}
+.bannerWrapper .socialsBannerWrapper .twitterBanner, .bannerWrapper .socialsBannerWrapper .githubBanner {
+  font-size: 1.3rem;
+  font-weight: 400;
 }
 .bannerWrapper .socialsBannerWrapper .line {
   width: 0.03rem;
@@ -232,6 +255,10 @@ select {
   align-items: center;
   gap: 0.5rem;
   align-self: flex-end;
+}
+.bannerWrapper .stackTxt {
+  font-size: 2rem;
+  font-weight: 700;
 }
 .bannerWrapper .stackIconBanner {
   background: #fff;
