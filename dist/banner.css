@@ -192,11 +192,22 @@ select {
   border-width: 0.1249rem;
 }
 
+/* Styling of banner starts here */
+.containerBanner {
+  max-width: 1500px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 .bannerWrapper {
   width: 1500px;
   height: 500px;
   background-color: red;
   padding: 4rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 .bannerWrapper .fullNameBanner {
   font-size: 1rem;
@@ -216,28 +227,22 @@ select {
   height: 1rem;
   background: #fff;
 }
-.bannerWrapper .stackParentWrapper {
-  text-align: right;
-  align-self: flex-end;
-}
-.bannerWrapper .stackParentWrapper .stacksWrapper {
+.bannerWrapper .stacksWrapperBanner {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
+  align-self: flex-end;
 }
-
-.containerBanner {
-  max-width: 1500px;
-  margin: 0 auto;
-  width: 100%;
+.bannerWrapper .stackIconBanner {
+  background: #fff;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
 }
-
-.stacksWrapperBanner {
-  display: flex;
-}
-
-.stackIconBanner svg {
+.bannerWrapper .stackIconBanner svg {
   width: 2.3rem;
   height: 2.3rem;
 }
+
+/* Styling of banner starts here */
 
 /*# sourceMappingURL=banner.css.map */

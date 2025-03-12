@@ -217,11 +217,24 @@ select {
     border-width: 0.1249rem;
 }
 
+/* Styling of banner starts here */
+
+.containerBanner {
+    max-width: 1500px;
+    margin: 0 auto;
+    width: 100%;
+}
+
 .bannerWrapper {
     width: 1500px;
     height: 500px;
     background-color: red;
     padding: 4rem;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    // align-items: flex-end;
+    flex-direction: column;
 
     .fullNameBanner {
         font-size: 1rem;
@@ -244,34 +257,32 @@ select {
         }
     }
 
-    .stackParentWrapper {
-        text-align: right;
+    .stacksWrapperBanner {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
         align-self: flex-end;
+        // justify-self: flex-end;
+    }
 
-        .stacksWrapper {
-            display: flex;
-            align-items: center;
+    .stackIconBanner {
+        background: #fff;
+        padding: 0.5rem;
+        border-radius: 0.4rem;
+        
+        svg {
+            width: 2.3rem;
+            height: 2.3rem;
         }
     }
+
 }
 
+/* Styling of banner starts here */
 
 
-.containerBanner {
-    max-width: 1500px;
-    margin: 0 auto;
-    width: 100%;
-}
 
-.stacksWrapperBanner {
-    display: flex;
-    
-}
 
-.stackIconBanner {
 
-    svg {
-        width: 2.3rem;
-        height: 2.3rem;
-    }
-}
+
+
