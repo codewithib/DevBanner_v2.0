@@ -150,11 +150,13 @@ body {
     font-size: 1rem;
     cursor: pointer;
     background: #0d1b2a;
+    appearance: none;
+    color: rgba($color: #fff, $alpha: 0.7);
 }
 
 .stackSelect option {
     padding: 0.4rem;
-    color: rgba($color: #fff, $alpha: 0.7);
+    
     font-weight: 500;
     font-size: 1rem;
 }
@@ -162,6 +164,11 @@ body {
 .stackSelect option:hover {
     background: #1F2937; 
 }
+
+.stackSelect:focus {
+    border-color: #B777F4;
+    outline: none;
+  }
 
 // .stackSelect option:checked {
 //     background: #232040;
