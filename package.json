@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass src/style.scss:dist/banner.css",
     "sass:watch": "sass --watch src/style.scss:dist/banner.css",
+    "dev": "browser-sync start --server --files 'dist/*.css, *.html'",
     "start": "npm-run-all --parallel sass:watch dev"
   },
   "keywords": [],
@@ -14,6 +15,7 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "browser-sync": "^3.0.3",
     "sass": "^1.85.1"
   }
 }
