@@ -30,6 +30,7 @@ html, body {
 body {
     background: var(--bg-color);
     color: #fff;
+    -webkit-font-smoothing: antialiased;
 } 
 
 .container {
@@ -97,7 +98,7 @@ body {
             padding: 0.35rem;
             outline: none;
             border: none;
-            border: 1px solid rgba($color: #fff, $alpha: 0.5);
+            border: 0.5px solid rgba($color: #fff, $alpha: 0.6);
             background: none;
             color: #fff;
             font-size: 1.4rem;
@@ -127,7 +128,7 @@ body {
                     align-items: center;
                     flex-direction: row-reverse;
                     position: relative;
-                    border: 1px solid rgba($color: #fff, $alpha: 0.5);
+                    border: 1px solid rgba($color: #fff, $alpha: 0.6);
                     border-radius: 0.4rem;
                     padding-left: 0.5rem;
 
@@ -142,38 +143,6 @@ body {
     }
 }
 
-
-.stackSelect {
-    width: 100%;
-    padding: 0.6rem 0;
-    outline: none;
-    font-size: 1rem;
-    cursor: pointer;
-    background: #0d1b2a;
-    appearance: none;
-    color: rgba($color: #fff, $alpha: 0.7);
-}
-
-.stackSelect option {
-    padding: 0.4rem;
-    
-    font-weight: 500;
-    font-size: 1rem;
-}
-
-.stackSelect option:hover {
-    background: #1F2937; 
-}
-
-.stackSelect:focus {
-    border-color: #B777F4;
-    outline: none;
-  }
-
-// .stackSelect option:checked {
-//     background: #232040;
-//     color: #B777F4;
-// }
 
 .stackPreview {
     display: flex;
@@ -217,7 +186,7 @@ body {
     display: flex;
     align-items: center;
     border: 1px solid;
-    border-color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.6);
     border-radius: 0.4rem;
 
 }
@@ -239,6 +208,76 @@ body {
     outline: none;
     border-color: #B777F4;
     border-width: 0.1249rem;
+}
+
+.stackSelect {
+    width: 100%;
+    padding: 0.6rem 0;
+    outline: none;
+    font-size: 1rem;
+    cursor: pointer;
+    background: #0d1b2a;
+    appearance: none;
+    color: rgba($color: #fff, $alpha: 0.7);
+}
+
+.stackSelect option:not(.disabledStack) {
+    padding: 0.4rem;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.stackSelect .disabledStack {
+    padding: 0.4rem;
+}
+
+.stackSelect option:not(.disabledStack):hover {
+    background: #1F2937;
+    color: #B777F4;
+}
+
+.stackSelect:focus {
+    border-color: #B777F4;
+    outline: none;
+  }
+
+.stackSelect option:not(.disabledStack):checked {
+    background: #232040;
+    color: #B777F4;
+}
+
+.countSelected {
+    color: rgba($color: #fff, $alpha: 0.7);
+    font-weight: 500;
+}
+
+.generateBtn, .downloadBtn {
+    border: none;
+    background: none;
+    color: #7E22CE;
+    width: 100%;
+    background: #fff;
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    display: inline-block;
+}
+
+.generateBtn:hover {
+    background: #150B2D;
+    border: 1px solid rgba($color: #fff, $alpha: 0.6);
+}
+
+.downloadBtn:hover {
+    background: #150B2D;
+    border: 1px solid rgba($color: #fff, $alpha: 0.6);
 }
 
 /* Styling of banner starts here */

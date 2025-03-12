@@ -65,7 +65,6 @@ const searchInput = document.querySelector(".search");
 const dropdownBtn = document.querySelector(".dropdownBtn");
 const stackSelect = document.querySelector(".stackSelect");
 const countSelected = document.querySelector(".countSelected");
-const generateBtn = document.querySelector(".submit");
 
 const disabledStack = document.querySelector(".disabledStack");
 
@@ -83,6 +82,10 @@ const fullNameBanner = document.querySelector(".fullNameBanner");
 const fieldBanner = document.querySelector(".fieldBanner");
 const twitterBanner = document.querySelector(".twitterBanner");
 const githubBanner = document.querySelector(".githubBanner");
+
+//Button to display banner
+
+const generateBtn = document.querySelector(".generateBtn");
 
 
 
@@ -216,7 +219,7 @@ const validateStack = () => {
 // Function to count selected stack
 const countSelectedStack = () => {
     const count = selectedStack.length;
-    countSelected.textContent = `Selected: ${count}/5`;
+    countSelected.textContent = `Selected: ${count}/5 technologies`;
 }
 
 
@@ -226,6 +229,7 @@ const formValidator = () => {
 
     if (isNameValid && isFieldValid) {
         //call function to generate banner
+        
     }
 }
 
@@ -261,72 +265,6 @@ const changeDisplayAndCaret = () => {
     // const isCaretUp = dropdownBtn.innerHTML === caretUp;
     // dropdownBtn.innerHTML = isCaretUp ? caretDown : caretUp;
 }
-
-const bannerWrapper = document.querySelector(".bannerWrapper");
-const twitterIcon = document.querySelector(".socialsBannerWrapper .twitter");
-const githubIcon = document.querySelector(".socialsBannerWrapper .github");
-const stacksWrapper = document.querySelector(".stackParentWrapper .stacksWrapper");
-const socialsBannerWrapper = document.querySelector(".socialsBannerWrapper");
-
-// function to display banner
-// const displayBanner = () => {
-//     for (stack of selectedStack) {
-//         const fullName = document.createElement("p");
-//         fullName.classList.add("fullName");
-//         fullName.textContent = userName;
-//         bannerWrapper.appendChild(fullName).before(socialsBannerWrapper);
-
-//         const field = document.createElement("p");
-//         field.classList.add("field");
-//         field.textContent = userField;
-//         bannerWrapper.appendChild(field).before(socialsBannerWrapper);
-
-//     }
-// }
-
-// Funtions to display banner starts here
-
-
-const displayName = () => {
-    const userName = nameInput.value.trim();
-    fullNameBanner.textContent = userName;
-
-}
-
-const displayField = () => {
-    const userField = fieldInput.value.trim();
-    fieldBanner.textContent = userField;
-
-}
-
-const displayTwitter = () => {
-    twitterBanner.style.display = "block";
-    const userTwitter = twitterInput.value.trim();
-    twitterBanner.textContent = userTwitter;
-}
-
-const displayGitHub = () => {
-    const userGitHub = githubInput.value.trim();
-    githubBanner.textContent = userGitHub;
-}
-
-// const stackParentWrapper = document.querySelector(".stackParentWrapper");
-const stacksWrapperBanner = document.querySelector(".stacksWrapperBanner");
-
-const displayStackBanner = () => {
-    stacksWrapperBanner.innerHTML = `<p class = "stackTxt">Stack:</p>`;
-    
-    for (let stack of selectedStack) {
-        const div = document.createElement("div");
-        div.classList.add("stackIconBanner")
-        div.innerHTML = stack.icon;
-        stacksWrapperBanner.appendChild(div);
-    }
-
-
-}
-
-// Funtions to display banner ends here
 
 // Populating selected stack
 const displayStack = () => {
@@ -378,6 +316,105 @@ const removeStack = (stackName) => {
         
     }
 }
+
+const bannerWrapper = document.querySelector(".bannerWrapper");
+const twitterIcon = document.querySelector(".socialsBannerWrapper .twitter");
+const githubIcon = document.querySelector(".socialsBannerWrapper .github");
+const stacksWrapper = document.querySelector(".stackParentWrapper .stacksWrapper");
+const socialsBannerWrapper = document.querySelector(".socialsBannerWrapper");
+
+
+// Funtions to display banner starts here
+
+const displayName = () => {
+    const userName = nameInput.value.trim();
+    fullNameBanner.textContent = userName;
+
+}
+
+const displayField = () => {
+    const userField = fieldInput.value.trim();
+    fieldBanner.textContent = userField;
+
+}
+
+const displayTwitter = () => {
+    twitterBanner.style.display = "block";
+    const userTwitter = twitterInput.value.trim();
+    twitterBanner.textContent = userTwitter;
+}
+
+const displayGitHub = () => {
+    const userGitHub = githubInput.value.trim();
+    githubBanner.textContent = userGitHub;
+}
+
+// const stackParentWrapper = document.querySelector(".stackParentWrapper");
+const stacksWrapperBanner = document.querySelector(".stacksWrapperBanner");
+
+const displayStackBanner = () => {
+    stacksWrapperBanner.innerHTML = `<p class = "stackTxt">Stack:</p>`;
+    
+    for (let stack of selectedStack) {
+        const div = document.createElement("div");
+        div.classList.add("stackIconBanner")
+        div.innerHTML = stack.icon;
+        stacksWrapperBanner.appendChild(div);
+    }
+
+
+}
+
+// Funtions to display banner ends here
+
+// Function to download banner starts here
+
+const downloadBtn = document.querySelector(".downloadBtn");
+
+const downloadBanner = async () => {
+    try {
+        // Clone the banner element
+        const clonedElement = bannerWrapper.cloneNode(true);
+        document.body.appendChild(clonedElement);
+
+        // Apply styles explicitly to prevent rendering issues
+        clonedElement.style.position = "absolute";
+        clonedElement.style.left = "-9999px"; // Hide it from view
+
+        // Wait for html2canvas to render the cloned element
+        const canvas = await html2canvas(clonedElement, {
+            scale: 3,  // Higher scale for better image quality
+            logging: false,
+            allowTaint: true,
+            useCORS: true
+        });
+
+        // Convert to PNG image
+        const imageData = canvas.toDataURL("image/png");
+
+        // Create a temporary download link
+        const link = document.createElement("a");
+        link.href = imageData;
+        link.download = "my-tech-stack.png";
+
+        // Trigger the download
+        document.body.appendChild(link);
+        link.click();
+
+        // Cleanup: Remove the cloned element and link
+        document.body.removeChild(link);
+        document.body.removeChild(clonedElement);
+    } catch (err) {
+        console.error("Error creating image:", err);
+        alert("There was an error creating the image");
+    }
+};
+
+// Function to download banner ends here
+
+downloadBtn.addEventListener("click", () => {
+    downloadBanner();
+})
 
 
 
