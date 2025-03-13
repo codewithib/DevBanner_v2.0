@@ -20,6 +20,10 @@ img, svg {
   height: auto;
 }
 
+button {
+  cursor: pointer;
+}
+
 html, body {
   font-family: var(--font);
   -webkit-font-smoothing: antialiased;
@@ -313,12 +317,12 @@ body {
 }
 .bannerWrapper .stackIconBanner {
   background: #fff;
-  padding: 0.5rem;
+  padding: 0.6rem;
   border-radius: 0.4rem;
 }
 .bannerWrapper .stackIconBanner svg {
-  width: 2.3rem;
-  height: 2.3rem;
+  width: 3.5rem;
+  height: 3.5rem;
 }
 
 /* Styling of banner starts here */

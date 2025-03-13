@@ -86,6 +86,7 @@ const githubBanner = document.querySelector(".githubBanner");
 //Button to display banner
 
 const generateBtn = document.querySelector(".generateBtn");
+const downloadBtn = document.querySelector(".downloadBtn");
 
 
 
@@ -369,52 +370,39 @@ const displayStackBanner = () => {
 
 // Function to download banner starts here
 
-const downloadBtn = document.querySelector(".downloadBtn");
 
 const downloadBanner = async () => {
     try {
-        // Clone the banner element
-        const clonedElement = bannerWrapper.cloneNode(true);
-        document.body.appendChild(clonedElement);
-
-        // Apply styles explicitly to prevent rendering issues
-        clonedElement.style.position = "absolute";
-        clonedElement.style.left = "-9999px"; // Hide it from view
-
-        // Wait for html2canvas to render the cloned element
-        const canvas = await html2canvas(clonedElement, {
-            scale: 3,  // Higher scale for better image quality
-            logging: false,
-            allowTaint: true,
-            useCORS: true
-        });
-
-        // Convert to PNG image
-        const imageData = canvas.toDataURL("image/png");
-
-        // Create a temporary download link
+        if (!bannerWrapper) {
+            alert("Banner not found")
+            return;
+        }
+        const dataURL = await htmlToImage.toPng(bannerWrapper);
         const link = document.createElement("a");
-        link.href = imageData;
-        link.download = "my-tech-stack.png";
-
-        // Trigger the download
+        link.href = dataURL;
+        link.download = "myBanner.png";
         document.body.appendChild(link);
         link.click();
-
-        // Cleanup: Remove the cloned element and link
         document.body.removeChild(link);
-        document.body.removeChild(clonedElement);
-    } catch (err) {
-        console.error("Error creating image:", err);
-        alert("There was an error creating the image");
+
+        downloadBtn.textContent = "Download Banner";
+        downloadBtn.style.cursor = "pointer";
+
+    } catch(error) {
+        console.log(error);
+        alert("Failed to download banner, please try again!")
     }
-};
+}
 
 // Function to download banner ends here
 
+
 downloadBtn.addEventListener("click", () => {
-    downloadBanner();
-})
+    downloadBtn.textContent = "Generating...";
+    downloadBtn.style.cursor = "progress";
+    setTimeout(downloadBanner, 1000);
+    
+});
 
 
 
