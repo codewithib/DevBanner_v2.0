@@ -294,9 +294,10 @@ body {
 .mobileBannerWrapper {
     max-width: 375px;
     margin: 0 auto;
-    overflow-x: auto;
+    overflow-x: scroll;
     white-space: nowrap;
     scroll-behavior: smooth;
+    scrollbar-color: #999 #f0f0f0;
 
     .bannerWrapper {
         width: 1500px;
