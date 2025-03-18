@@ -264,8 +264,15 @@ body {
 }
 
 /* Styling of banner starts here */
-.bannerWrapper {
-  max-width: 1500px;
+.mobileBannerWrapper {
+  max-width: 375px;
+  margin: 0 auto;
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+.mobileBannerWrapper .bannerWrapper {
+  width: 1500px;
   height: 500px;
   background-color: #7E22CE;
   padding: 5rem;
@@ -273,76 +280,127 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   flex-direction: column;
-  display: none;
 }
-.bannerWrapper .fullNameBanner {
+.mobileBannerWrapper .bannerWrapper .fullNameBanner {
   font-size: 4rem;
   font-weight: 700;
   margin-bottom: 1rem;
 }
-.bannerWrapper .fieldBanner {
+.mobileBannerWrapper .bannerWrapper .fieldBanner {
   font-size: 2rem;
   font-weight: 500;
   margin-bottom: 1rem;
 }
-.bannerWrapper .socialsBannerWrapper {
+.mobileBannerWrapper .bannerWrapper .socialsBannerWrapper {
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-left: 1.2rem;
 }
-.bannerWrapper .socialsBannerWrapper .twitter, .bannerWrapper .socialsBannerWrapper .github {
+.mobileBannerWrapper .bannerWrapper .socialsBannerWrapper .twitter, .mobileBannerWrapper .bannerWrapper .socialsBannerWrapper .github {
   display: flex;
   align-items: center;
   gap: 0.2rem;
 }
-.bannerWrapper .socialsBannerWrapper .twitterBanner, .bannerWrapper .socialsBannerWrapper .githubBanner {
+.mobileBannerWrapper .bannerWrapper .socialsBannerWrapper .twitterBanner, .mobileBannerWrapper .bannerWrapper .socialsBannerWrapper .githubBanner {
   font-size: 1.5rem;
   font-weight: 600;
 }
-.bannerWrapper .socialsBannerWrapper .line {
+.mobileBannerWrapper .bannerWrapper .socialsBannerWrapper .line {
   width: 0.03rem;
   height: 1rem;
   background: #fff;
 }
-.bannerWrapper .stacksWrapperBanner {
+.mobileBannerWrapper .bannerWrapper .stacksWrapperBanner {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   align-self: flex-end;
 }
-.bannerWrapper .stackTxt {
+.mobileBannerWrapper .bannerWrapper .stackTxt {
   font-size: 2rem;
   font-weight: 700;
 }
-.bannerWrapper .stackIconBanner {
+.mobileBannerWrapper .bannerWrapper .stackIconBanner {
   background: #fff;
   padding: 0.5rem;
   border-radius: 0.4rem;
 }
-.bannerWrapper .stackIconBanner svg {
+.mobileBannerWrapper .bannerWrapper .stackIconBanner svg {
   width: 3rem;
   height: 3rem;
 }
 
 /* Styling of banner ends here */
+/* Media query for tablet starts here */
 @media (min-width: 768px) {
   .containerBanner {
     display: block;
   }
-  .bannerWrapper {
-    display: flex;
+  .mobileBannerWrapper {
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+  .mobileBannerWrapper .bannerWrapper {
     max-width: 1500px;
     height: 500px;
+    background-color: #7E22CE;
+    padding: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .mobileBannerWrapper .bannerWrapper .fullNameBanner {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .mobileBannerWrapper .bannerWrapper .fieldBanner {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .mobileBannerWrapper .bannerWrapper .socialsBannerWrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 1.2rem;
+  }
+  .mobileBannerWrapper .bannerWrapper .socialsBannerWrapper .twitter, .mobileBannerWrapper .bannerWrapper .socialsBannerWrapper .github {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+  }
+  .mobileBannerWrapper .bannerWrapper .socialsBannerWrapper .twitterBanner, .mobileBannerWrapper .bannerWrapper .socialsBannerWrapper .githubBanner {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .mobileBannerWrapper .bannerWrapper .socialsBannerWrapper .line {
+    width: 0.03rem;
+    height: 1rem;
+    background: #fff;
+  }
+  .mobileBannerWrapper .bannerWrapper .stacksWrapperBanner {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    align-self: flex-end;
+  }
+  .mobileBannerWrapper .bannerWrapper .stackTxt {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .mobileBannerWrapper .bannerWrapper .stackIconBanner {
+    background: #fff;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+  }
+  .mobileBannerWrapper .bannerWrapper .stackIconBanner svg {
+    width: 3rem;
+    height: 3rem;
   }
 }
-/* Media query for tablet starts here */
 /* Media query for tablet ends here */
-/* Downloading container opens */
-.bannerDownload {
-  width: 1500px;
-  height: 500px;
-  display: flex;
-}
 
 /*# sourceMappingURL=banner.css.map */

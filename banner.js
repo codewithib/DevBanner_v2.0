@@ -369,8 +369,6 @@ const displayStackBanner = () => {
 // Funtions to display banner ends here
 
 // Function to download banner starts here
-
-
 const downloadBanner = async () => {
     try {
         if (!bannerWrapper) {
@@ -388,7 +386,6 @@ const downloadBanner = async () => {
         downloadBtn.textContent = "Download Banner";
         downloadBtn.style.cursor = "pointer";
         generatingTxt.textContent = "";
-        bannerWrapper.classList.remove("bannerDownload");
 
     } catch(error) {
         console.log(error);
@@ -404,7 +401,6 @@ downloadBtn.addEventListener("click", () => {
     downloadBtn.textContent = "Generating...";
     generatingTxt.textContent = "Generating..."
     downloadBtn.style.cursor = "progress";
-    bannerWrapper.classList.add("bannerDownload");
     setTimeout(downloadBanner, 1000);
     
 });
