@@ -232,7 +232,7 @@ body {
   font-weight: 500;
 }
 
-.generateBtn, .downloadBtn {
+.btn {
   border: none;
   background: none;
   color: #7E22CE;
@@ -254,26 +254,26 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
+.previewBtn {
+  margin-top: 3rem;
+}
+
 .downloadBtn:hover {
   background: #150B2D;
   border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 /* Styling of banner starts here */
-.containerBanner {
-  max-width: 1500px;
-  margin: 0 auto;
-  width: 100%;
-}
-
 .bannerWrapper {
-  width: 1500px;
+  max-width: 1500px;
   height: 500px;
-  background-color: red;
+  background-color: #7E22CE;
   padding: 5rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   flex-direction: column;
+  display: none;
 }
 .bannerWrapper .fullNameBanner {
   font-size: 4rem;
@@ -297,8 +297,8 @@ body {
   gap: 0.2rem;
 }
 .bannerWrapper .socialsBannerWrapper .twitterBanner, .bannerWrapper .socialsBannerWrapper .githubBanner {
-  font-size: 1.3rem;
-  font-weight: 400;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 .bannerWrapper .socialsBannerWrapper .line {
   width: 0.03rem;
@@ -317,14 +317,32 @@ body {
 }
 .bannerWrapper .stackIconBanner {
   background: #fff;
-  padding: 0.6rem;
+  padding: 0.5rem;
   border-radius: 0.4rem;
 }
 .bannerWrapper .stackIconBanner svg {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 3rem;
+  height: 3rem;
 }
 
-/* Styling of banner starts here */
+/* Styling of banner ends here */
+@media (min-width: 768px) {
+  .containerBanner {
+    display: block;
+  }
+  .bannerWrapper {
+    display: flex;
+    max-width: 1500px;
+    height: 500px;
+  }
+}
+/* Media query for tablet starts here */
+/* Media query for tablet ends here */
+/* Downloading container opens */
+.bannerDownload {
+  width: 1500px;
+  height: 500px;
+  display: flex;
+}
 
 /*# sourceMappingURL=banner.css.map */
