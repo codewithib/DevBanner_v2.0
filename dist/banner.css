@@ -212,11 +212,6 @@ body {
   padding: 0.4rem;
 }
 
-.stackSelect option:not(.disabledStack):hover {
-  background: #1F2937;
-  color: #B777F4;
-}
-
 .stackSelect:focus {
   border-color: #B777F4;
   outline: none;
@@ -252,6 +247,10 @@ body {
 .generateBtn:hover {
   background: #150B2D;
   border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.generateBtn {
+  margin-top: 2rem;
 }
 
 .previewBtn {
@@ -333,6 +332,56 @@ body {
 }
 
 /* Styling of banner ends here */
+/* Styling of banner background picker starts here */
+.wrapperGradient {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 0.5rem;
+  margin-top: 1rem;
+}
+.wrapperGradient .headertxt {
+  margin-top: 1.5rem;
+}
+.wrapperGradient .gradientContainer {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.wrapperGradient .gradientContainer .colorDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.wrapperGradient .gradientContainer .txtAndColor {
+  display: flex;
+  align-items: center;
+}
+.wrapperGradient .gradientContainer input {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+.wrapperGradient .gradientContainer .colorCodeOne, .wrapperGradient .gradientContainer .colorCodeTwo {
+  margin-left: 1rem;
+}
+.wrapperGradient .gradientDirection {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.6rem;
+  outline: none;
+  font-size: 1rem;
+  cursor: pointer;
+  background: #0d1b2a;
+  color: white;
+}
+
+/* Styling of banner background picker ends here */
 /* Media query for tablet starts here */
 @media (min-width: 768px) {
   .containerBanner {

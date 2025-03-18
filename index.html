@@ -71,6 +71,40 @@
 
                 <p class="countSelected"></p>
                 <div class="errorMessage countError"></div>
+
+                <article class="wrapperGradient">
+                    <p>Background Gradient Picker</p>
+
+                    <div class="gradientContainer">
+                        <div class="colorDetails">
+                            <label for="colorOne">Color 1</label>
+                            <div class="txtAndColor">
+                                <input type="color" id="colorOne" class="colorOne" value="#B777F4">
+                                <p class="colorCodeOne"></p>
+                            </div>
+
+                        </div>
+
+                        <div class="colorDetails">
+                            <label for="colorTwo">Color 2</label>
+                            <div class="txtAndColor">
+                                <input type="color" id="colorTwo" class="colorTwo" value="#B777F4">
+                                <p class="colorCodeTwo"></p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <p class="headertxt">Gradient Direction</p>
+                    <select class="gradientDirection">
+                        <option value="to right">Left → Right </option>
+                        <option value="to left">Right → Left</option>
+                        <option value="to bottom">Top → Bottom</option>
+                        <option value="to top">Bottom → Top</option>
+                        <option value="to bottom right">Diagonal (↘)</option>
+                        <option value="to bottom left">Diagonal (↙)</option>
+                    </select>
+                </article>
                 
                 <button type="submit" class="btn generateBtn">Generate Banner! 👩‍🍳</button>
             </form>

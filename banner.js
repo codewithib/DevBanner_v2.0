@@ -405,6 +405,27 @@ downloadBtn.addEventListener("click", () => {
     
 });
 
+// Function to change banner background color starts here
+const colorOne = document.querySelector(".colorOne");
+const colorTwo = document.querySelector(".colorTwo");
+
+const colorCodeOne = document.querySelector(".colorCodeOne");
+const colorCodeTwo = document.querySelector(".colorCodeTwo");
+const gradientDirection = document.querySelector(".gradientDirection");
+
+const changeBackgroundColor = () => {
+    const colorValueOne = colorOne.value;
+    const colorValueTwo = colorTwo.value;
+    const directionValue = gradientDirection.value;
+
+    colorCodeOne.textContent = colorValueOne;
+    colorCodeTwo.textContent = colorValueTwo;
+
+    bannerWrapper.style.background = `linear-gradient(${directionValue}, ${colorValueOne}, ${colorValueTwo})`;
+
+}
+// Function to change banner background color ends here 
+
 
 
 // Loading stack array upon page load
@@ -412,6 +433,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadStackArray();
     countSelectedStack();
     twitterBanner.style.display = "none";
+    // changeBackgroundColor();
 });
 
 // Search input event listener
@@ -433,13 +455,6 @@ stackSelect.addEventListener("change", (e) => {
     validateStack();
     displayStackBanner();
 });
-
-// const changeOptionColor = () => {
-//     // for (let option of options) {
-//         .style.background = "rgb(35, 32, 64)";
-//         .style.color = "rgb(183, 119, 244)";
-//     // }
-// }
 
 
 nameInput.addEventListener("input", () => {
@@ -472,6 +487,19 @@ userForm.addEventListener("submit", (e) => {
 dropdownBtn.addEventListener("click", () => {
     changeDisplayAndCaret();
 
+});
+
+// bannerWrapper background change event listener
+colorOne.addEventListener("input", () => {
+    changeBackgroundColor();
+});
+
+colorTwo.addEventListener("input", () => {
+    changeBackgroundColor();
+});
+
+gradientDirection.addEventListener("input", () => {
+    changeBackgroundColor();
 });
 
 
