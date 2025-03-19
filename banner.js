@@ -94,6 +94,8 @@ const stacksWrapperBanner = document.querySelector(".stacksWrapperBanner");
 
 const downloadContainer = document.querySelector(".downloadContainer");
 
+const generatedTxt = document.querySelector(".generatedTxt");
+
 const generatingTxt = document.querySelector(".generatingTxt");
 
 
@@ -395,13 +397,11 @@ const changeBackgroundColor = () => {
 
 // Function to generate Banner starts here
 const generateBanner = () => {
-    const isBannerOff = bannerWrapper.style.display === "none";
-    const isdownloadContainerOff = downloadContainer.style.display === "none";
-
-    bannerWrapper.style.display = isBannerOff ? "flex" : "none";
-    downloadContainer.style.display = isdownloadContainerOff ? "block" : "none";
+    bannerWrapper.style.display = "flex";
+    downloadContainer.style.display = "block";
     generateBtn.textContent = "Generate Banner! 👩‍🍳";
     generateBtn.style.cursor = "pointer";
+    generatedTxt.textContent = "Banner generated, scroll down to view";
 }
 // Function to generate Banner ends here
 
@@ -515,7 +515,7 @@ gradientDirection.addEventListener("input", () => {
 generateBtn.addEventListener("click", () => {
     generateBtn.textContent = "Generating...";
     generateBtn.style.cursor = "progress";
-    setTimeout(generateBanner, 1000)
+    setTimeout(generateBanner, 1000);
 });
 
 // Banner Download event listener
