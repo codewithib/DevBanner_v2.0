@@ -339,23 +339,27 @@ const removeStack = (stackName) => {
 const displayName = () => {
     const userName = nameInput.value.trim();
     fullNameBanner.textContent = userName;
+    saveFormToStorage();
 
 }
 
 const displayField = () => {
     const userField = fieldInput.value.trim();
     fieldBanner.textContent = userField;
+    saveFormToStorage();
 
 }
 
 const displayTwitter = () => {
     const userTwitter = twitterInput.value.trim();
     twitterBanner.textContent = userTwitter;
+    saveFormToStorage();
 }
 
 const displayGitHub = () => {
     const userGitHub = githubInput.value.trim();
     githubBanner.textContent = userGitHub;
+    saveFormToStorage();
 }
 
 
@@ -394,6 +398,7 @@ const generateBanner = () => {
     generateBtn.textContent = "Generate Banner! 👩‍🍳";
     generateBtn.style.cursor = "pointer";
     generatedTxt.textContent = "Banner generated, scroll down to view";
+    loadBannerFormData();
 }
 // Function to generate Banner ends here
 
@@ -457,8 +462,14 @@ const loadBannerFormData = () => {
     const savedFormData = JSON.parse(localStorage.getItem("bannerFormData", "{}"));
     console.log(savedFormData);
 
-    // fullNameBanner.value = savedFormData.userName;
-    console.log(fullNameBanner.value)
+    if (savedFormData) {
+        nameInput.value = savedFormData.userName;
+        fieldInput.value = savedFormData.userField;
+        twitterInput.value = savedFormData.userTwitter;
+        githubInput.value = savedFormData.userGitHub;
+    
+    }
+
 }
 // Local Storage logic ends here
 
@@ -470,6 +481,10 @@ document.addEventListener("DOMContentLoaded", () => {
     bannerWrapper.style.display = "none";
     downloadContainer.style.display = "none";
     loadBannerFormData();
+    displayName();
+    displayField();
+    displayTwitter();
+    displayGitHub();
     
 });
 
