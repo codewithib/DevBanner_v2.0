@@ -281,15 +281,6 @@ const changeDisplayAndCaret = () => {
         dropdownBtn.classList.add("dropdownBtn");
         dropdownBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024"><path fill="#fff" d="M8.2 751.4c0 8.6 3.4 17.401 10 24.001c13.2 13.2 34.8 13.2 48 0l451.8-451.8l445.2 445.2c13.2 13.2 34.8 13.2 48 0s13.2-34.8 0-48L542 251.401c-13.2-13.2-34.8-13.2-48 0l-475.8 475.8c-6.8 6.8-10 15.4-10 24.2z"></path></svg>`;
     }
-
-
-
-    // let caretUp = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024"><path fill="currentColor" d="M8.2 751.4c0 8.6 3.4 17.401 10 24.001c13.2 13.2 34.8 13.2 48 0l451.8-451.8l445.2 445.2c13.2 13.2 34.8 13.2 48 0s13.2-34.8 0-48L542 251.401c-13.2-13.2-34.8-13.2-48 0l-475.8 475.8c-6.8 6.8-10 15.4-10 24.2z"/></svg>`;
-    // let caretDown = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024"><path fill="currentColor" d="M831.872 340.864L512 652.672L192.128 340.864a30.59 30.59 0 0 0-42.752 0a29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728a30.59 30.59 0 0 0-42.752 0z"/></svg>`;
-    
-    // dropdownBtn.innerHTML = caretUp;
-    // const isCaretUp = dropdownBtn.innerHTML === caretUp;
-    // dropdownBtn.innerHTML = isCaretUp ? caretDown : caretUp;
 }
 
 // Populating selected stack
@@ -389,8 +380,9 @@ const changeBackgroundColor = () => {
 
     colorCodeOne.textContent = colorValueOne;
     colorCodeTwo.textContent = colorValueTwo;
+    const gradient = `linear-gradient(${directionValue}, ${colorValueOne}, ${colorValueTwo})`;
 
-    bannerWrapper.style.background = `linear-gradient(${directionValue}, ${colorValueOne}, ${colorValueTwo})`;
+    bannerWrapper.style.background = gradient;
 
 }
 // Function to change banner background color ends here
@@ -435,6 +427,40 @@ const downloadBanner = async () => {
 }
 // Function to download banner ends here
 
+// Local Storage logic starts here
+const saveFormToStorage = () => {
+    const userName = nameInput.value.trim();
+    const userField = fieldInput.value.trim();
+    const userTwitter = twitterInput.value.trim();
+    const userGitHub = githubInput.value.trim();
+
+    const colorValueOne = colorOne.value;
+    const colorValueTwo = colorTwo.value;
+    const directionValue = gradientDirection.value;
+
+    const gradient = `linear-gradient(${directionValue}, ${colorValueOne}, ${colorValueTwo})`;
+    const rgbaBackground = gradient;
+
+    const bannerFormData = {
+        userName: userName,
+        userField: userField,
+        userTwitter: userTwitter,
+        userGitHub: userGitHub,
+        rgbaBackground: rgbaBackground,
+    }
+
+    console.log(bannerFormData);
+    localStorage.setItem("bannerFormData", JSON.stringify(bannerFormData));
+}
+
+const loadBannerFormData = () => {
+    const savedFormData = JSON.parse(localStorage.getItem("bannerFormData", "{}"));
+    console.log(savedFormData);
+
+    // fullNameBanner.value = savedFormData.userName;
+    console.log(fullNameBanner.value)
+}
+// Local Storage logic ends here
 
 // Loading stack array upon page load
 document.addEventListener("DOMContentLoaded", () => {
@@ -443,7 +469,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     bannerWrapper.style.display = "none";
     downloadContainer.style.display = "none";
+    loadBannerFormData();
+    
 });
+
+
 
 // Search input event listener
 
@@ -469,21 +499,25 @@ stackSelect.addEventListener("change", (e) => {
 nameInput.addEventListener("input", () => {
     nameValidator();
     displayName();
+    saveFormToStorage();
     
 });
 
 fieldInput.addEventListener("input", () => {
     fieldValidator();
     displayField();
+    saveFormToStorage();
 
 });
 
 twitterInput.addEventListener("input", () => {
     displayTwitter();
+    saveFormToStorage();
 });
 
 githubInput.addEventListener("input", () => {
     displayGitHub();
+    saveFormToStorage();
 });
 
 userForm.addEventListener("submit", (e) => {
@@ -501,14 +535,17 @@ dropdownBtn.addEventListener("click", () => {
 // bannerWrapper background change event listener
 colorOne.addEventListener("input", () => {
     changeBackgroundColor();
+    saveFormToStorage();
 });
 
 colorTwo.addEventListener("input", () => {
     changeBackgroundColor();
+    saveFormToStorage();
 });
 
 gradientDirection.addEventListener("input", () => {
     changeBackgroundColor();
+    saveFormToStorage();
 });
 
 //Generate Banner event listener
