@@ -78,10 +78,33 @@ const errorForGitHub = document.querySelector(".errorForGitHub");
 const countError = document.querySelector(".countError");
 
 //Banner display variables -- DOM
+const bannerWrapper = document.querySelector(".bannerWrapper");
+
 const fullNameBanner = document.querySelector(".fullNameBanner");
 const fieldBanner = document.querySelector(".fieldBanner");
+const twitterIcon = document.querySelector(".socialsBannerWrapper .twitter");
+const githubIcon = document.querySelector(".socialsBannerWrapper .github");
+
 const twitterBanner = document.querySelector(".twitterBanner");
 const githubBanner = document.querySelector(".githubBanner");
+const stacksWrapper = document.querySelector(".stackParentWrapper .stacksWrapper");
+const socialsBannerWrapper = document.querySelector(".socialsBannerWrapper");
+
+const stacksWrapperBanner = document.querySelector(".stacksWrapperBanner");
+
+const downloadContainer = document.querySelector(".downloadContainer");
+
+const generatingTxt = document.querySelector(".generatingTxt");
+
+
+// Variables for Banner gradients
+const colorOne = document.querySelector(".colorOne");
+const colorTwo = document.querySelector(".colorTwo");
+
+const colorCodeOne = document.querySelector(".colorCodeOne");
+const colorCodeTwo = document.querySelector(".colorCodeTwo");
+const gradientDirection = document.querySelector(".gradientDirection");
+
 
 //Button to display banner
 
@@ -318,13 +341,6 @@ const removeStack = (stackName) => {
     }
 }
 
-const bannerWrapper = document.querySelector(".bannerWrapper");
-const twitterIcon = document.querySelector(".socialsBannerWrapper .twitter");
-const githubIcon = document.querySelector(".socialsBannerWrapper .github");
-const stacksWrapper = document.querySelector(".stackParentWrapper .stacksWrapper");
-const socialsBannerWrapper = document.querySelector(".socialsBannerWrapper");
-
-
 // Funtions to display banner starts here
 
 const displayName = () => {
@@ -340,7 +356,6 @@ const displayField = () => {
 }
 
 const displayTwitter = () => {
-    twitterBanner.style.display = "block";
     const userTwitter = twitterInput.value.trim();
     twitterBanner.textContent = userTwitter;
 }
@@ -350,8 +365,6 @@ const displayGitHub = () => {
     githubBanner.textContent = userGitHub;
 }
 
-// const stackParentWrapper = document.querySelector(".stackParentWrapper");
-const stacksWrapperBanner = document.querySelector(".stacksWrapperBanner");
 
 const displayStackBanner = () => {
     stacksWrapperBanner.innerHTML = `<p class = "stackTxt">Stack:</p>`;
@@ -362,13 +375,36 @@ const displayStackBanner = () => {
         div.innerHTML = stack.icon;
         stacksWrapperBanner.appendChild(div);
     }
-
-
 }
 
 // Funtions to display banner ends here
 
-const mobileBannerWrapper = document.querySelector(".mobileBannerWrapper");
+// Function to change banner background color starts here
+const changeBackgroundColor = () => {
+    const colorValueOne = colorOne.value;
+    const colorValueTwo = colorTwo.value;
+    const directionValue = gradientDirection.value;
+
+    colorCodeOne.textContent = colorValueOne;
+    colorCodeTwo.textContent = colorValueTwo;
+
+    bannerWrapper.style.background = `linear-gradient(${directionValue}, ${colorValueOne}, ${colorValueTwo})`;
+
+}
+// Function to change banner background color ends here
+
+// Function to generate Banner starts here
+const generateBanner = () => {
+    const isBannerOff = bannerWrapper.style.display === "none";
+    const isdownloadContainerOff = downloadContainer.style.display === "none";
+
+    bannerWrapper.style.display = isBannerOff ? "flex" : "none";
+    downloadContainer.style.display = isdownloadContainerOff ? "block" : "none";
+    generateBtn.textContent = "Generate Banner! 👩‍🍳";
+    generateBtn.style.cursor = "pointer";
+}
+// Function to generate Banner ends here
+
 // Function to download banner starts here
 const downloadBanner = async () => {
     try {
@@ -397,51 +433,16 @@ const downloadBanner = async () => {
         alert("Failed to download banner, please try again!")
     }
 }
-
-
 // Function to download banner ends here
-const generatingTxt = document.querySelector(".generatingTxt");
-downloadBtn.addEventListener("click", () => {
-    downloadBtn.textContent = "Generating...";
-    generatingTxt.textContent = "Generating..."
-    downloadBtn.style.cursor = "progress";
-
-    bannerWrapper.classList.add("bannerDownload");
-    bannerWrapper.classList.toggle("bannerWrapper");
-    bannerWrapper.classList.toggle("containerBanner");
-    setTimeout(downloadBanner, 1000);
-    
-});
-
-// Function to change banner background color starts here
-const colorOne = document.querySelector(".colorOne");
-const colorTwo = document.querySelector(".colorTwo");
-
-const colorCodeOne = document.querySelector(".colorCodeOne");
-const colorCodeTwo = document.querySelector(".colorCodeTwo");
-const gradientDirection = document.querySelector(".gradientDirection");
-
-const changeBackgroundColor = () => {
-    const colorValueOne = colorOne.value;
-    const colorValueTwo = colorTwo.value;
-    const directionValue = gradientDirection.value;
-
-    colorCodeOne.textContent = colorValueOne;
-    colorCodeTwo.textContent = colorValueTwo;
-
-    bannerWrapper.style.background = `linear-gradient(${directionValue}, ${colorValueOne}, ${colorValueTwo})`;
-
-}
-// Function to change banner background color ends here 
-
 
 
 // Loading stack array upon page load
 document.addEventListener("DOMContentLoaded", () => {
     loadStackArray();
     countSelectedStack();
-    twitterBanner.style.display = "none";
-    // changeBackgroundColor();
+
+    bannerWrapper.style.display = "none";
+    downloadContainer.style.display = "none";
 });
 
 // Search input event listener
@@ -508,6 +509,26 @@ colorTwo.addEventListener("input", () => {
 
 gradientDirection.addEventListener("input", () => {
     changeBackgroundColor();
+});
+
+//Generate Banner event listener
+generateBtn.addEventListener("click", () => {
+    generateBtn.textContent = "Generating...";
+    generateBtn.style.cursor = "progress";
+    setTimeout(generateBanner, 1000)
+});
+
+// Banner Download event listener
+downloadBtn.addEventListener("click", () => {
+    downloadBtn.textContent = "Generating...";
+    generatingTxt.textContent = "Generating..."
+    downloadBtn.style.cursor = "progress";
+
+    bannerWrapper.classList.add("bannerDownload");
+    bannerWrapper.classList.toggle("bannerWrapper");
+    bannerWrapper.classList.toggle("containerBanner");
+    setTimeout(downloadBanner, 1000);
+    
 });
 
 
