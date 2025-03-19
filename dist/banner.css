@@ -129,6 +129,9 @@ body {
 .userForm .userDetails fieldset .socialWrapper .iconAndInputWrapper input {
   border: none;
 }
+.userForm .errorMessage {
+  color: #f22121;
+}
 
 .stackPreview {
   display: flex;
@@ -405,6 +408,9 @@ body {
 
 /* Media query for tablet starts here */
 @media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
   .bannerWrapper {
     max-width: 1500px;
     height: 500px;
@@ -471,6 +477,12 @@ body {
   .bannerWrapper .stackIconBanner svg {
     width: 3rem;
     height: 3rem;
+  }
+  .disclaimerTxt {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.88);
+    font-weight: 300;
   }
 }
 /* Media query for tablet ends here */

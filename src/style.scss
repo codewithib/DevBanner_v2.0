@@ -146,6 +146,10 @@ body {
 
 
     }
+
+    .errorMessage {
+        color: #f22121;
+    }
 }
 
 
@@ -455,6 +459,9 @@ body {
 }
 /* Media query for tablet starts here */
 @media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
     .bannerWrapper {
         max-width: 1500px;
         height: 500px;
@@ -536,6 +543,13 @@ body {
             }
         }
     
+    }
+
+    .disclaimerTxt {
+        font-size: 1.2rem;
+        font-style: italic;
+        color: rgba($color: #fff, $alpha: 0.88);
+        font-weight: 300;
     }
 }
 // }
