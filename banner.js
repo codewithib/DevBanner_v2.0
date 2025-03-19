@@ -330,6 +330,8 @@ const removeStack = (stackName) => {
         countSelectedStack();
         displayStackBanner();
         countError.textContent = "";
+        saveFormToStorage();
+        saveSelectedStack();
         
     }
 }
@@ -443,15 +445,16 @@ const saveFormToStorage = () => {
     const colorValueTwo = colorTwo.value;
     const directionValue = gradientDirection.value;
 
-    const gradient = `linear-gradient(${directionValue}, ${colorValueOne}, ${colorValueTwo})`;
-    const rgbaBackground = gradient;
-
     const bannerFormData = {
         userName: userName,
         userField: userField,
         userTwitter: userTwitter,
         userGitHub: userGitHub,
-        rgbaBackground: rgbaBackground,
+        gradient: {
+            direction: directionValue,
+            colorOne: colorValueOne,
+            colorTwo: colorValueTwo,
+        }
     }
 
     console.log(bannerFormData);
@@ -467,7 +470,33 @@ const loadBannerFormData = () => {
         fieldInput.value = savedFormData.userField;
         twitterInput.value = savedFormData.userTwitter;
         githubInput.value = savedFormData.userGitHub;
-    
+
+        if (savedFormData.gradient) {
+            gradientDirection.value = savedFormData.gradient.direction;
+            colorOne.value = savedFormData.gradient.colorOne;
+            colorTwo.value = savedFormData.gradient.colorTwo;
+            changeBackgroundColor();
+        }
+
+        displayName();
+        displayField();
+        displayTwitter();
+        displayGitHub();
+    }
+}
+
+const saveSelectedStack = () => {
+    localStorage.setItem("selectedStack", JSON.stringify(selectedStack));
+}
+
+const loadSelectedStack = () => {
+    const selectedStackStorage = JSON.parse(localStorage.getItem("selectedStack") || "[]");
+    if (selectedStackStorage) {
+        selectedStack = selectedStackStorage;
+        displayStack();
+        displayStackBanner();
+        countSelectedStack();
+        console.log(selectedStackStorage);
     }
 
 }
@@ -485,6 +514,8 @@ document.addEventListener("DOMContentLoaded", () => {
     displayField();
     displayTwitter();
     displayGitHub();
+
+    loadSelectedStack();
     
 });
 
@@ -508,6 +539,7 @@ stackSelect.addEventListener("change", (e) => {
     e.preventDefault();
     validateStack();
     displayStackBanner();
+    saveSelectedStack();
 });
 
 
