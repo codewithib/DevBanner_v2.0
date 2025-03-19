@@ -368,6 +368,7 @@ const displayStackBanner = () => {
 
 // Funtions to display banner ends here
 
+const mobileBannerWrapper = document.querySelector(".mobileBannerWrapper");
 // Function to download banner starts here
 const downloadBanner = async () => {
     try {
@@ -386,6 +387,10 @@ const downloadBanner = async () => {
         downloadBtn.textContent = "Download Banner";
         downloadBtn.style.cursor = "pointer";
         generatingTxt.textContent = "";
+        bannerWrapper.classList.remove("bannerDownload");
+
+        bannerWrapper.classList.toggle("bannerWrapper");
+        bannerWrapper.classList.toggle("containerBanner");
 
     } catch(error) {
         console.log(error);
@@ -396,11 +401,14 @@ const downloadBanner = async () => {
 
 // Function to download banner ends here
 const generatingTxt = document.querySelector(".generatingTxt");
-
 downloadBtn.addEventListener("click", () => {
     downloadBtn.textContent = "Generating...";
     generatingTxt.textContent = "Generating..."
     downloadBtn.style.cursor = "progress";
+
+    bannerWrapper.classList.add("bannerDownload");
+    bannerWrapper.classList.toggle("bannerWrapper");
+    bannerWrapper.classList.toggle("containerBanner");
     setTimeout(downloadBanner, 1000);
     
 });

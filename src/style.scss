@@ -196,8 +196,6 @@ body {
 
 }
 
-
-
 .userDetails.searchWrapper .search {
     border: none;
 }
@@ -239,7 +237,8 @@ body {
 }
 
 .stackSelect option:not(.disabledStack):hover {
-
+    background: #1F2937;
+    color: #B777F4;
 }
 
 .stackSelect:focus {
@@ -291,92 +290,6 @@ body {
     background: #150B2D;
     border: 1px solid rgba($color: #fff, $alpha: 0.6);
 }
-
-/* Styling of banner starts here */
-
-.mobileBannerWrapper {
-    max-width: 375px;
-    margin: 0 auto;
-    overflow-x: scroll;
-    white-space: nowrap;
-    scroll-behavior: smooth;
-    scrollbar-color: #999 #f0f0f0;
-
-    .bannerWrapper {
-        width: 1500px;
-        height: 500px;
-        background-color: #7E22CE;
-        padding: 5rem;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        flex-direction: column;
-        // display: none;
-    
-        .fullNameBanner {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-    
-        .fieldBanner {
-            font-size: 2rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-    
-        .socialsBannerWrapper {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-left: 1.2rem;
-    
-            .twitter, .github {
-                display: flex;
-                align-items: center;
-                gap: 0.2rem;
-            }
-    
-            .twitterBanner, .githubBanner {
-                font-size: 1.5rem;
-                font-weight: 600;
-            }
-            .line {
-                width: 0.03rem;
-                height: 1rem;
-                background: #fff;
-            }
-        }
-    
-        .stacksWrapperBanner {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            align-self: flex-end;
-            // justify-self: flex-end;
-        }
-    
-        .stackTxt {
-            font-size: 2rem;
-            font-weight: 700;
-        }
-    
-        .stackIconBanner {
-            background: #fff;
-            padding: 0.5rem;
-            border-radius: 0.4rem;
-            
-            svg {
-                width: 3rem;
-                height: 3rem;
-            }
-        }
-    
-    }
-}
-
-
-/* Styling of banner ends here */
 
 /* Styling of banner background picker starts here */
 .wrapperGradient {
@@ -436,100 +349,272 @@ body {
 
 /* Styling of banner background picker ends here */
 
+/* Styling of banner starts here */
+.bannerWrapper {
+    // width: 1500px;
+    max-width: 375px;
+    height: auto;
+    margin: 0 auto;
+    // overflow-x: scroll;
+    background-color: #7E22CE;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 2rem;
+    // display: none;
 
-/* Media query for tablet starts here */
-@media (min-width: 768px) {
-    .containerBanner {
-        display: block;
+    .fullNameBanner {
+        font-size: 1rem;
+        font-weight: 300;
+        margin-bottom: 0.3rem;
     }
 
-    .mobileBannerWrapper {
-        max-width: 1500px;
-        margin: 0 auto;
+    .fieldBanner {
+        font-size: 1rem;
+        font-weight: 300;
+        margin-bottom: 0.3rem;
+    }
 
-        .bannerWrapper {
-            max-width: 1500px;
-            height: 500px;
-            background-color: #7E22CE;
-            padding: 5rem;
+    .socialsBannerWrapper {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-left: 0.6rem;
+
+        .twitter, .github {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            // align-items: flex-end;
-            flex-direction: column;
-            // display: none;
-        
-            .fullNameBanner {
-                font-size: 4rem;
-                font-weight: 700;
-                margin-bottom: 1rem;
-            }
-        
-            .fieldBanner {
-                font-size: 2rem;
-                font-weight: 500;
-                margin-bottom: 1rem;
-            }
-        
-            .socialsBannerWrapper {
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-                margin-left: 1.2rem;
-        
-                .twitter, .github {
-                    display: flex;
-                    align-items: center;
-                    gap: 0.2rem;
-                }
-        
-                .twitterBanner, .githubBanner {
-                    font-size: 1.5rem;
-                    font-weight: 600;
-                }
-                .line {
-                    width: 0.03rem;
-                    height: 1rem;
-                    background: #fff;
-                }
-            }
-        
-            .stacksWrapperBanner {
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-                align-self: flex-end;
-                // justify-self: flex-end;
-            }
-        
-            .stackTxt {
-                font-size: 2rem;
-                font-weight: 700;
-            }
-        
-            .stackIconBanner {
-                background: #fff;
-                padding: 0.5rem;
-                border-radius: 0.4rem;
-                
-                svg {
-                    width: 3rem;
-                    height: 3rem;
-                }
-            }
-        
+            align-items: center;
+            gap: 0.15rem;
+        }
+
+        .twitter svg {
+            width: 0.8rem;
+            height: 0.8rem;
+        }
+
+        .github svg {
+            width: 0.8rem;
+            height: 0.8rem;
+        }
+
+        .twitterBanner, .githubBanner {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+
+        .line {
+            width: 0.03rem;
+            height: 1rem;
+            background: #fff;
         }
     }
 
+    .stacksWrapperBanner {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        align-self: flex-end;
+        // justify-self: flex-end;
+    }
+
+    .stackTxt {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .stackIconBanner {
+        background: #fff;
+        padding: 0.2rem;
+        border-radius: 0.4rem;
+        
+        svg {
+            width: 1.3rem;
+            height: 1.3rem;
+        }
+    }
 
 }
+
+/* Styling of banner ends here */
+
+.disclaimerTxt {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: rgba($color: #fff, $alpha: 0.88);
+    font-weight: 200;
+}
+/* Media query for tablet starts here */
+@media (min-width: 768px) {
+    .bannerWrapper {
+        max-width: 1500px;
+        height: 500px;
+        background-color: #7E22CE;
+        padding: 5rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        // align-items: flex-end;
+        flex-direction: column;
+        // display: none;
+    
+        .fullNameBanner {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+    
+        .fieldBanner {
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+    
+        .socialsBannerWrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-left: 1.2rem;
+    
+            .twitter, .github {
+                display: flex;
+                align-items: center;
+                gap: 0.2rem;
+            }
+
+            .twitter svg {
+                width: 2rem;
+                height: 2rem;
+            }
+
+            .github svg {
+                width: 2rem;
+                height: 2rem;
+            }
+    
+            .twitterBanner, .githubBanner {
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+            .line {
+                width: 0.03rem;
+                height: 1rem;
+                background: #fff;
+            }
+        }
+    
+        .stacksWrapperBanner {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            align-self: flex-end;
+            // justify-self: flex-end;
+        }
+    
+        .stackTxt {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+    
+        .stackIconBanner {
+            background: #fff;
+            padding: 0.5rem;
+            border-radius: 0.4rem;
+            
+            svg {
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+    
+    }
+}
+// }
 /* Media query for tablet ends here */
 
+/* Styling of banner on download starts here */
+.bannerDownload {
+    width: 1500px;
+    height: 500px;
+    background-color: #7E22CE;
+    padding: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    // align-items: flex-end;
+    flex-direction: column;
+    // display: none;
 
+    .fullNameBanner {
+        font-size: 4rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
 
+    .fieldBanner {
+        font-size: 2rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+    }
 
+    .socialsBannerWrapper {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-left: 1.2rem;
 
+        .twitter, .github {
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+        }
 
+        .twitter svg {
+            width: 2rem;
+            height: 2rem;
+        }
 
+        .github svg {
+            width: 2rem;
+            height: 2rem;
+        }
 
+        .twitterBanner, .githubBanner {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .line {
+            width: 0.03rem;
+            height: 1rem;
+            background: #fff;
+        }
+    }
 
+    .stacksWrapperBanner {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        align-self: flex-end;
+        // justify-self: flex-end;
+    }
+
+    .stackTxt {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    .stackIconBanner {
+        background: #fff;
+        padding: 0.5rem;
+        border-radius: 0.4rem;
+        
+        svg {
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+
+}
+/* Styling of banner on download ends here */
