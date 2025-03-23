@@ -88,7 +88,7 @@ html, body {
   .heroContents .center {
     display: flex;
     flex-direction: column;
-    filter: drop-shadow(-5px 2px 39px rgba(185, 253, 80, 0.40));
+    filter: drop-shadow(-5px 2px 39px rgba(185, 253, 80, 0.6));
 
     h2, p {
         text-align: center;
@@ -97,7 +97,7 @@ html, body {
     .heading {
         position: relative;
 
-        h2 {
+        .heading-txt {
             font-size: 4rem;
             line-height: 5.625rem; 
             text-transform: capitalize;
@@ -119,10 +119,11 @@ html, body {
 
 
 
-    p {
+    .subContent {
         font-size: 1.25rem;
         font-weight: 400;
         line-height: 2.25rem;
+        color: rgba($color: #fff, $alpha: 0.8);
     }
 
     .call-to-actionBtn {
@@ -145,3 +146,45 @@ html, body {
         }
     }
   }
+
+  @media (max-width: 785px) {
+    .container {
+        max-width: 785px;
+        margin: 0 auto;
+        width: 95%;
+    }
+
+    .heroContents .mockup {
+        display: none;
+    }
+  }
+
+  /* Mobile media query starts here */
+  @media (max-width: 375px) {
+    .container {
+        max-width: 375px;
+        margin: 0 auto;
+        width: 95%;
+    }
+
+    .heroContents .center {
+    
+        .heading {
+    
+            .heading-txt {
+                font-size: 2.6rem;
+                line-height: 4.4rem; 
+            }
+        }
+    
+        .subContent {
+            font-size: 1rem;
+        }
+    
+        .call-to-actionBtn {
+            margin-top: 1.4rem;
+        }
+      }
+
+}
+  /* Mobile media query ends here */
