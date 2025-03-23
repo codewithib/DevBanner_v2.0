@@ -4,10 +4,10 @@
 :root {
     --font-primary: -apple-system, BlinkMacSystemFont, "SF Compact", "Helvetica Neue", Arial, sans-serif;
     --font-secondary: 'Manrope', sans-serif;
-    --highlight-color: #6DACE7;
-    --txt-color: #1C0E0D;
-    --bg-color: #18082E;
-    --txt-highlight-color: #B777F4;
+    --highlight-color: #B9FD50;
+    --bg-color: #111204;
+    --font-color: #fff;
+    --btn-text-color: #111204;
 }
 
 body {
@@ -57,7 +57,7 @@ html, body {
   }
 
   .logo .icon-wrapper {
-    background: #fff;
+    background: var(--highlight-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,12 +67,12 @@ html, body {
   }
 
   .logo .icon-wrapper .icon {
-    color: var(--txt-highlight-color);
+    color: var(--btn-text-color);
     font-weight: 800;
     font-size: 1rem;
   }
   .logo .txt {
-    color: #fff;
+    color: var(--font-color);
     font-size: 1.3rem;
     font-weight: 600;
     letter-spacing: -0.063rem;
@@ -88,14 +88,36 @@ html, body {
   .heroContents .center {
     display: flex;
     flex-direction: column;
+    filter: drop-shadow(-5px 2px 39px rgba(185, 253, 80, 0.40));
+
     h2, p {
         text-align: center;
     }
 
-    h2 {
-        font-size: 4rem;
-        line-height: 5.625rem; 
+    .heading {
+        position: relative;
+
+        h2 {
+            font-size: 4rem;
+            line-height: 5.625rem; 
+            text-transform: capitalize;
+            
+            .highlight-txt {
+                font-style: italic;
+                color: var(--highlight-color);
+            }  
+        }
+
+        svg {
+            position: absolute;
+            top: 1;
+            bottom: 0;
+            right: 10rem;
+
+         }
     }
+
+
 
     p {
         font-size: 1.25rem;
@@ -109,8 +131,7 @@ html, body {
         justify-content: center;
         gap: 0.7rem;
         border: none;
-        background: #fff;
-        color: #7E22CE;
+        background: var(--highlight-color);
         padding: 1rem 2.5rem;
         border-radius: 3rem;
         transition: background-color 0.3s ease;
@@ -120,6 +141,7 @@ html, body {
         p {
             font-size: 1.375rem;
             font-weight: 500;
+            color: var(--btn-text-color);
         }
     }
   }
