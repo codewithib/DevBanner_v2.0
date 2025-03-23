@@ -1,12 +1,13 @@
 /* Importing font */
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 /* Adding colors to my variables */
 :root {
-    --bg-color: #18082E;
-    --txt-highlight-color: #B777F4;
+    --font-primary: -apple-system, BlinkMacSystemFont, "SF Compact", "Helvetica Neue", Arial, sans-serif;
+    --font-secondary: 'Manrope', sans-serif;
+    --bg-color: #111204;
+    --txt-highlight-color: #B9FD50;
     --font-color: #FFFFFF;
-    --font: 'Lexend Deca', sans-serif;
+    --btn-text-color: #111204;
 }
 
 * {
@@ -27,7 +28,6 @@ button {
 }
 
 html, body {
-    font-family: var(--font);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -36,6 +36,7 @@ body {
     background: var(--bg-color);
     color: #fff;
     -webkit-font-smoothing: antialiased;
+    font-family: var(--font-primary), var(--font-secondary);
 } 
 
 .container {
@@ -56,7 +57,7 @@ body {
     max-width: 13rem;
     margin: 0 auto;
     .icon-wrapper {
-        background: #fff;
+        background: var(--txt-highlight-color);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -67,7 +68,7 @@ body {
     }
 
     .icon-wrapper .icon {
-        color: var(--txt-highlight-color);
+        color: var(--btn-text-color);
         font-weight: 800;
         font-size: 0.7rem;
     }
@@ -102,8 +103,7 @@ body {
             width: 100%;
             padding: 0.35rem;
             outline: none;
-            border: none;
-            border: 0.5px solid rgba($color: #fff, $alpha: 0.6);
+            border: 0.5px solid rgba($color: #fff, $alpha: 0.4);
             background: none;
             color: #fff;
             font-size: 1.4rem;
@@ -133,7 +133,7 @@ body {
                     align-items: center;
                     flex-direction: row-reverse;
                     position: relative;
-                    border: 1px solid rgba($color: #fff, $alpha: 0.6);
+                    border: 1px solid rgba($color: #fff, $alpha: 0.4);
                     border-radius: 0.4rem;
                     padding-left: 0.5rem;
 
@@ -165,14 +165,14 @@ body {
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    border: 1px solid #B777F4;
+    border: 1px solid var(--txt-highlight-color);
     border-radius: 0.4rem;
     padding: 0.4rem 0.6rem;
 
     .delBtn {
         background: none;
         border: none;
-        color: #B777F4;
+        color: var(--txt-highlight-color);
         font-weight: 600;
         font-size: 1rem;
         margin-left: 0.1rem;
@@ -188,7 +188,7 @@ body {
 
 .stackName {
     text-transform: lowercase;
-    color: #B777F4;
+    color: var(--txt-highlight-color);
 }
 
 .userDetails.searchWrapper {
@@ -213,7 +213,7 @@ body {
 
 .userDetails.searchWrapper .search:focus {
     outline: none;
-    border-color: #B777F4;
+    border-color: var(--txt-highlight-color);
     border-width: 0.1249rem;
 }
 
@@ -242,17 +242,17 @@ body {
 
 .stackSelect option:not(.disabledStack):hover {
     background: #1F2937;
-    color: #B777F4;
+    color: var(--txt-highlight-color);
 }
 
 .stackSelect:focus {
-    border-color: #B777F4;
+    border-color: var(--txt-highlight-color);
     outline: none;
   }
 
 .stackSelect option:not(.disabledStack):checked {
     background: #232040;
-    color: #B777F4;
+    color: var(--txt-highlight-color);
 }
 
 .countSelected {
@@ -262,10 +262,9 @@ body {
 
 .btn {
     border: none;
-    background: none;
-    color: #7E22CE;
+    color: var(--btn-text-color);
     width: 100%;
-    background: #fff;
+    background: var(--txt-highlight-color);
     padding: 0.6rem;
     border-radius: 0.5rem;
     margin-top: 1rem;
@@ -280,6 +279,7 @@ body {
 .generateBtn:hover {
     background: #150B2D;
     border: 1px solid rgba($color: #fff, $alpha: 0.6);
+    color: #fff;
 }
 
 .generateBtn {
@@ -293,6 +293,7 @@ body {
 .downloadBtn:hover {
     background: #150B2D;
     border: 1px solid rgba($color: #fff, $alpha: 0.6);
+    color: #fff;
 }
 
 /* Styling of banner background picker starts here */

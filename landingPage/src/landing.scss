@@ -147,6 +147,10 @@ html, body {
     }
   }
 
+  .mobileMockup {
+    display: none;
+  }
+
   @media (max-width: 785px) {
     .container {
         max-width: 785px;
@@ -165,6 +169,7 @@ html, body {
         max-width: 375px;
         margin: 0 auto;
         width: 95%;
+        padding: 2rem 0;
     }
 
     .heroContents .center {
@@ -185,6 +190,27 @@ html, body {
             margin-top: 1.4rem;
         }
       }
+
+      .mobileMockup {
+        // display: flex;
+        // max-width: 375px;
+        display: block;
+        margin-top: 2rem;
+        // margin: 0 auto;
+      }
+
+      .mobileMockup .mockupOne {
+        width: 16rem;
+        height: 32.77631rem;
+        transform: rotate(-15deg);
+        flex-shrink: 0;
+        margin: 0 auto;
+      }
+
+    //   .mobileMockup .mockupTwo {
+    //     margin-left: -22rem;
+    //     // transform: rotate(-15deg);
+    //   }
 
 }
   /* Mobile media query ends here */
