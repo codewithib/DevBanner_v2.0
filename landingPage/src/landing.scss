@@ -1,0 +1,125 @@
+/* Impporting my fonts */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+    --font-primary: -apple-system, BlinkMacSystemFont, "SF Compact", "Helvetica Neue", Arial, sans-serif;
+    --font-secondary: 'Manrope', sans-serif;
+    --highlight-color: #6DACE7;
+    --txt-color: #1C0E0D;
+    --bg-color: #18082E;
+    --txt-highlight-color: #B777F4;
+}
+
+body {
+    font-family: var(--font-primary), var(--font-secondary);
+    background: var(--bg-color);
+    color: #fff;
+}
+
+button {
+    cursor: pointer;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+html, body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 95%;
+    padding: 1rem 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    border: 1px solid #fff;
+    padding: 0.6rem;
+    border-radius: 2rem;
+    justify-content: center;
+    max-width: 13rem;
+    margin: 0 auto;
+  }
+
+  .logo .icon-wrapper {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+  }
+
+  .logo .icon-wrapper .icon {
+    color: var(--txt-highlight-color);
+    font-weight: 800;
+    font-size: 1rem;
+  }
+  .logo .txt {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: -0.063rem;
+  }
+
+  .heroContents {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .heroContents .center {
+    display: flex;
+    flex-direction: column;
+    h2, p {
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 4rem;
+        line-height: 5.625rem; 
+    }
+
+    p {
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 2.25rem;
+    }
+
+    .call-to-actionBtn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.7rem;
+        border: none;
+        background: #fff;
+        color: #7E22CE;
+        padding: 1rem 2.5rem;
+        border-radius: 3rem;
+        transition: background-color 0.3s ease;
+        margin: 0 auto;
+        margin-top: 3rem;
+
+        p {
+            font-size: 1.375rem;
+            font-weight: 500;
+        }
+    }
+  }
