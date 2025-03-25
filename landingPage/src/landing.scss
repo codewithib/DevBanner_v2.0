@@ -403,7 +403,11 @@ header {
   display: flex;
   align-items: center;
   gap: 0.8rem;
+}
+
+.footer-txt-container .footer-txt {
   font-size: 0.8rem;
+  color: rgba($color: #fff, $alpha: 0.8);
 }
 
 /* Footer styling ends here */
