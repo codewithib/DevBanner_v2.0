@@ -72,6 +72,7 @@ html, body {
     font-weight: 800;
     font-size: 1rem;
   }
+
   .logo .txt {
     color: var(--font-color);
     font-size: 1.3rem;
@@ -186,6 +187,8 @@ html, body {
     border-radius: 1rem;
   }
 
+ 
+
   /* How it works styling starts here */
   .how-it-works {
     margin-top: 5rem;
@@ -248,6 +251,10 @@ html, body {
   .features {
     margin-top: 5rem;
 
+    .featuresContainer {
+      padding: 0 2rem;
+    }
+
     .featuresContainer .heading-txt {
         font-weight: 400;
         color: var(--highlight-color);
@@ -256,8 +263,8 @@ html, body {
 
     .featuresContainer .subContent {
         color: rgba($color: #fff, $alpha: 0.8);
-        max-width: 20rem;
-        line-height: 1.5rem;
+        // max-width: 20rem;
+        // line-height: 1.5rem;
     }
 
     .cardContainer {
@@ -304,6 +311,106 @@ html, body {
 
   }
   /* Features section styling ends here */
+
+   /* Call to action section styling starts here */
+   .call-to-action {
+    margin-top: 5rem;
+
+    .actionContainer {
+      padding: 0 2rem;
+      text-align: center;
+    }
+    
+    .actionContainer .heading-txt {
+        font-size: 4rem;
+        line-height: 5.625rem; 
+        text-transform: capitalize;
+    }
+
+    .actionContainer .subContent {
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 2.25rem;
+        color: rgba($color: #fff, $alpha: 0.8);
+    }
+
+    .actionContainer .call-to-actionBtn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      border: none;
+      background: var(--highlight-color);
+      padding: 1rem 2.5rem;
+      border-radius: 3rem;
+      transition: background-color 0.3s ease;
+      // margin: 0 auto;
+      margin-top: 3rem;
+
+      p {
+        font-size: 1.375rem;
+        font-weight: 500;
+        color: var(--btn-text-color);
+    }
+    
+    }
+  }
+  /* Call to action section styling ends here */
+
+  /* Footer styling starts here */
+
+  .footerSection {
+    background: #222;
+    margin-top: 5rem;
+  }
+  .footerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+
+  .footerContainer .logoFooter {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      border: 1px solid #fff;
+      padding: 0.6rem;
+      border-radius: 2rem;
+  
+    .icon-wrapper {
+      background: var(--highlight-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+    }
+  
+   .icon-wrapper .icon {
+      color: var(--btn-text-color);
+      font-weight: 800;
+      font-size: 1rem;
+    }
+    
+    .txt {
+      color: var(--font-color);
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: -0.063rem;
+    }
+
+  }
+
+  .footer-txt-container {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.8rem;
+}
+
+  /* Footer styling ends here */
 
 
   @media (max-width: 785px) {
