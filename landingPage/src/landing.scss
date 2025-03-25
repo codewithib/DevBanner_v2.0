@@ -1,4 +1,5 @@
 /* Impporting my fonts */
+
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 :root {
@@ -17,324 +18,141 @@ body {
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 img, svg {
-    display: block;
-    max-width: 100%;
-    height: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 html, body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
-    max-width: 1440px;
-    margin: 0 auto;
-    width: 95%;
-    padding: 1rem 0;
-    // border: 1px solid #fff;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 95%;
+  padding: 1rem 0;
+  // border: 1px solid #fff;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    border: 1px solid #fff;
-    padding: 0.6rem;
-    border-radius: 2rem;
-    justify-content: center;
-    max-width: 13rem;
-    margin: 0 auto;
-  }
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid #fff;
+  padding: 0.6rem;
+  border-radius: 2rem;
+  justify-content: center;
+  max-width: 13rem;
+  margin: 0 auto;
+}
 
-  .logo .icon-wrapper {
-    background: var(--highlight-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-  }
+.logo .icon-wrapper {
+  background: var(--highlight-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
 
-  .logo .icon-wrapper .icon {
-    color: var(--btn-text-color);
-    font-weight: 800;
-    font-size: 1rem;
-  }
+.logo .icon-wrapper .icon {
+  color: var(--btn-text-color);
+  font-weight: 800;
+  font-size: 1rem;
+}
 
-  .logo .txt {
-    color: var(--font-color);
-    font-size: 1.3rem;
-    font-weight: 600;
-    letter-spacing: -0.063rem;
-  }
+.logo .txt {
+  color: var(--font-color);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.063rem;
+}
 
-  header {
-    min-height: 100vh;
-  }
+header {
+  min-height: 100vh;
+}
 
-  .heroContents {
-    margin-top: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-  }
-
-
-  .heroContents .left .mockupOne {
-    width: 11.82025rem;
-    height: 29.77006rem;
-    transform: rotate(-15deg);
-    flex-shrink: 0;
-  }
-
-  .heroContents .right .mockupTwo {
-    width: 11.82025rem;
-    height: 29.77006rem;
-    transform: rotate(15deg);
-    flex-shrink: 0;
-  }
-
-  .heroContents .center {
-    display: flex;
-    flex-direction: column;
-    max-width: 45rem;
-    // border: 1px solid #fff;
-    filter: drop-shadow(-5px 2px 39px rgba(185, 253, 80, 0.6));
-
-    h2, p {
-        text-align: center;
-    }
-
-    .heading {
-        position: relative;
-
-        .heading-txt {
-            font-size: 4rem;
-            line-height: 5.625rem; 
-            text-transform: capitalize;
-            
-            .highlight-txt {
-                font-style: italic;
-                color: var(--highlight-color);
-            }  
-        }
-
-        svg {
-            position: absolute;
-            top: 1;
-            bottom: 0;
-            right: 10rem;
-
-         }
-    }
+.heroContents {
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
 
 
+.heroContents .left .mockupOne {
+  width: 11.82025rem;
+  height: 29.77006rem;
+  transform: rotate(-15deg);
+  flex-shrink: 0;
+}
 
-    .subContent {
-        font-size: 1.25rem;
-        font-weight: 400;
-        line-height: 2.25rem;
-        color: rgba($color: #fff, $alpha: 0.8);
-    }
+.heroContents .right .mockupTwo {
+  width: 11.82025rem;
+  height: 29.77006rem;
+  transform: rotate(15deg);
+  flex-shrink: 0;
+}
 
-    .call-to-actionBtn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.7rem;
-        border: none;
-        background: var(--highlight-color);
-        padding: 1rem 2.5rem;
-        border-radius: 3rem;
-        transition: background-color 0.3s ease;
-        margin: 0 auto;
-        margin-top: 3rem;
+.heroContents .center {
+  display: flex;
+  flex-direction: column;
+  max-width: 45rem;
+  gap: 2rem;
+  // border: 1px solid #fff;
+  filter: drop-shadow(-5px 2px 39px rgba(185, 253, 80, 0.6));
 
-        p {
-            font-size: 1.375rem;
-            font-weight: 500;
-            color: var(--btn-text-color);
-        }
-    }
-  }
-
-  .mobileMockup {
-    display: none;
-  }
-
-  .bannerContainer {
-    padding: 0 3rem;
-    // background: linear-gradient(to right, #df3a3a, #8f36e2);
-    
-    border-radius: 1rem;
-  
-  }
-
-  .bannerImage {
-    border-radius: 1rem;
-  }
-
- 
-
-  /* How it works styling starts here */
-  .how-it-works {
-    margin-top: 5rem;
-
-    .worksContainer {
-        padding: 0 2rem;
-      }
-      .worksContainer .heading-txt {
-        font-weight: 400;
-        color: var(--highlight-color);
-        margin-bottom: 2rem;
-      }
-    
-      .cardContainer {
-        display: flex;
-        justify-content: space-between;
-        gap: 2rem;
-        flex-wrap: wrap;
-    
-      }
-    
-      .cardContainer .card {
-        display: flex;
-        flex-direction: column;
-        gap: 1.4rem;
-        flex: 1;
-      }
-    
-      .cardContainer .card h2 {
-        font-weight: 500;
-      }
-    
-      .cardContainer .card p {
-        color: rgba($color: #fff, $alpha: 0.8);
-      }
-    
-      .cardContainer .card .arrowAndHead {
-        display: flex;
-        // align-items: center;
-      }
-    
-      .cardContainer .card .arrowAndHead .head {
-        background: var(--highlight-color);
-        border-radius: 50%;
-        padding: 0.9rem;
-    
-        svg {
-            margin: 0 auto;
-        }
-      }
-    
-    
-      .cardContainer .card .arrowAndHead svg {
-        margin-left: -1rem;
-      }
-  }
-  /* How it works styling ends here */
-
-  /* Features section styling starts here */
-  .features {
-    margin-top: 5rem;
-
-    .featuresContainer {
-      padding: 0 2rem;
-    }
-
-    .featuresContainer .heading-txt {
-        font-weight: 400;
-        color: var(--highlight-color);
-        margin-bottom: 1rem;
-    }
-
-    .featuresContainer .subContent {
-        color: rgba($color: #fff, $alpha: 0.8);
-        // max-width: 20rem;
-        // line-height: 1.5rem;
-    }
-
-    .cardContainer {
-        display: flex;
-        justify-content: space-between;
-        gap: 2rem;
-        flex-wrap: wrap;
-        margin-top: 2rem;
-      }
-
-      .cardContainer .card {
-        display: flex;
-        flex-direction: column;
-        gap: 1.4rem;
-        flex: 1;
-        border-radius: 1rem 1rem 0rem 0rem;
-        background: #222;
-        padding: 1rem;
-      }
-
-      .cardContainer .card .head {
-        align-self: flex-start;
-      }
-
-    //   .cardContainer .card .head {
-    //     background: var(--highlight-color);
-    //     border-radius: 1rem;
-    //     padding: 0.9rem;
-    
-    //     svg {
-    //         margin: 0 auto;
-           
-    //     }
-    //   }
-
-      .cardContainer .card h2 {
-        font-weight: 500;
-      }
-
-      .cardContainer .card p {
-        color: rgba($color: #fff, $alpha: 0.8);
-      }
-
-
-  }
-  /* Features section styling ends here */
-
-   /* Call to action section styling starts here */
-   .call-to-action {
-    margin-top: 5rem;
-
-    .actionContainer {
-      padding: 0 2rem;
+  h2, p {
       text-align: center;
-    }
-    
-    .actionContainer .heading-txt {
-        font-size: 4rem;
-        line-height: 5.625rem; 
-        text-transform: capitalize;
-    }
+  }
 
-    .actionContainer .subContent {
-        font-size: 1.25rem;
-        font-weight: 400;
-        line-height: 2.25rem;
-        color: rgba($color: #fff, $alpha: 0.8);
-    }
+  .heading {
+      position: relative;
 
-    .actionContainer .call-to-actionBtn {
+      .heading-txt {
+          font-size: 4rem;
+          line-height: 5.625rem; 
+          text-transform: capitalize;
+          
+          .highlight-txt {
+              font-style: italic;
+              color: var(--highlight-color);
+          }  
+      }
+
+      svg {
+          position: absolute;
+          top: 1;
+          bottom: 0;
+          right: 10rem;
+
+        }
+  }
+
+
+
+  .subContent {
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 2.25rem;
+      color: rgba($color: #fff, $alpha: 0.8);
+  }
+
+  .call-to-actionBtn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -344,135 +162,338 @@ html, body {
       padding: 1rem 2.5rem;
       border-radius: 3rem;
       transition: background-color 0.3s ease;
-      // margin: 0 auto;
-      margin-top: 3rem;
+      margin: 0 auto;
+      margin-top: 1rem;
 
       p {
-        font-size: 1.375rem;
-        font-weight: 500;
-        color: var(--btn-text-color);
+          font-size: 1.375rem;
+          font-weight: 500;
+          color: var(--btn-text-color);
+      }
+  }
+}
+
+.mobileMockup {
+  display: none;
+}
+
+.bannerContainer {
+  padding: 0 3rem;
+  // background: linear-gradient(to right, #df3a3a, #8f36e2);
+  
+  border-radius: 1rem;
+
+}
+
+.bannerImage {
+  border-radius: 1rem;
+}
+
+
+
+/* How it works styling starts here */
+.how-it-works {
+  margin-top: 5rem;
+
+  .worksContainer {
+      padding: 0 2rem;
     }
-    
+    .worksContainer .heading-txt {
+      font-weight: 400;
+      font-size: 3rem;
+      margin-bottom: 2rem;
     }
-  }
-  /* Call to action section styling ends here */
-
-  /* Footer styling starts here */
-
-  .footerSection {
-    background: #222;
-    margin-top: 5rem;
-  }
-  .footerContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2rem;
-  }
-
-  .footerContainer .logoFooter {
+  
+    .cardContainer {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+      flex: 1 1 calc(25% - 2rem);
+  
+    }
+  
+    .cardContainer .card {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      flex: 1;
+    }
+  
+    .cardContainer .card h2 {
+      font-weight: 500;
+    }
+  
+    .cardContainer .card p {
+      color: rgba($color: #fff, $alpha: 0.8);
+    }
+  
+    .cardContainer .card .arrowAndHead {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
-      border: 1px solid #fff;
-      padding: 0.6rem;
-      border-radius: 2rem;
+    }
   
-    .icon-wrapper {
+    .cardContainer .card .arrowAndHead .head {
       background: var(--highlight-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 2rem;
-      height: 2rem;
       border-radius: 50%;
+      padding: 0.9rem;
+  
+      svg {
+          margin: 0 auto;
+      }
     }
   
-   .icon-wrapper .icon {
-      color: var(--btn-text-color);
-      font-weight: 800;
-      font-size: 1rem;
+  
+    .cardContainer .card .arrowAndHead .arrow svg {
+      margin-left: -1rem;
     }
-    
-    .txt {
-      color: var(--font-color);
-      font-size: 1.3rem;
-      font-weight: 600;
-      letter-spacing: -0.063rem;
+}
+
+/* How it works styling ends here */
+
+/* Features section styling starts here */
+
+.features {
+  margin-top: 5rem;
+
+  .featuresContainer {
+    padding: 0 2rem;
+  }
+
+  .featuresContainer .heading-txt {
+    font-weight: 400;
+    color: var(--highlight-color);
+    margin-bottom: 1rem;
+    font-size: 3rem;
+  }
+
+  .featuresContainer .subContent {
+    color: rgba($color: #fff, $alpha: 0.8);
+  }
+
+  .cardContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    flex: 1 1 calc(25% - 2rem);
+  }
+
+    .cardContainer .card {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      flex: 1;
+      border-radius: 1rem 1rem 0rem 0rem;
+      background: #222;
+      padding: 1rem;
+    }
+
+    .cardContainer .card .head {
+      align-self: flex-start;
+    }
+
+    .cardContainer .card h2 {
+      font-weight: 500;
+    }
+
+    .cardContainer .card p {
+      color: rgba($color: #fff, $alpha: 0.8);
+    }
+
+
+}
+/* Features section styling ends here */
+
+/* Call to action section styling starts here */
+.call-to-action {
+  margin-top: 5rem;
+
+  .actionContainer {
+    padding: 0 2rem;
+    text-align: center;
+  }
+
+  .actionContainer .heading-txt {
+    font-size: 4rem;
+    line-height: 5.625rem; 
+    text-transform: capitalize;
+  }
+
+  .actionContainer .subContent {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 2.25rem;
+    color: rgba($color: #fff, $alpha: 0.8);
+  }
+
+  .actionContainer .call-to-actionBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    border: none;
+    background: var(--highlight-color);
+    padding: 1rem 2.5rem;
+    border-radius: 3rem;
+    transition: background-color 0.3s ease;
+    // margin: 0 auto;
+    margin-top: 3rem;
+
+    p {
+      font-size: 1.375rem;
+      font-weight: 500;
+      color: var(--btn-text-color);
     }
 
   }
 
-  .footer-txt-container {
+}
+/* Call to action section styling ends here */
+
+/* Footer styling starts here */
+
+.footerSection {
+  background: #222;
+  margin-top: 5rem;
+}
+
+.footerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.footerContainer .logoFooter {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
-    font-size: 0.8rem;
-}
+    gap: 0.6rem;
+    border: 1px solid #fff;
+    padding: 0.6rem;
+    border-radius: 2rem;
 
-  /* Footer styling ends here */
-
-
-  @media (max-width: 785px) {
-    .container {
-        max-width: 785px;
-        margin: 0 auto;
-        width: 95%;
-    }
-
-    .heroContents .mockup {
-        display: none;
-    }
+  .icon-wrapper {
+    background: var(--highlight-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
   }
 
-  /* Mobile media query starts here */
-  @media (max-width: 375px) {
-    .container {
-        max-width: 375px;
-        margin: 0 auto;
-        width: 95%;
-        padding: 2rem 0;
-    }
-
-    .heroContents .center {
-    
-        .heading {
-    
-            .heading-txt {
-                font-size: 2.6rem;
-                line-height: 4.4rem; 
-            }
-        }
-    
-        .subContent {
-            font-size: 1rem;
-        }
-    
-        .call-to-actionBtn {
-            margin-top: 1.4rem;
-        }
-      }
-
-      .mobileMockup {
-        // display: flex;
-        // max-width: 375px;
-        display: block;
-        margin-top: 2rem;
-        // margin: 0 auto;
-      }
-
-      .mobileMockup .mockupOne {
-        width: 16rem;
-        height: 32.77631rem;
-        transform: rotate(-15deg);
-        flex-shrink: 0;
-        margin: 0 auto;
-      }
-
-    //   .mobileMockup .mockupTwo {
-    //     margin-left: -22rem;
-    //     // transform: rotate(-15deg);
-    //   }
+  .icon-wrapper .icon {
+    color: var(--btn-text-color);
+    font-weight: 800;
+    font-size: 1rem;
+  }
+  
+  .txt {
+    color: var(--font-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: -0.063rem;
+  }
 
 }
-  /* Mobile media query ends here */
+
+.footer-txt-container {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.8rem;
+}
+
+/* Footer styling ends here */
+
+
+@media (max-width: 785px) {
+  .container {
+      max-width: 785px;
+      margin: 0 auto;
+      width: 95%;
+  }
+
+  .heroContents .mockupOne, .mockupTwo {
+      display: none;
+  }
+
+  .how-it-works .cardContainer .card {
+    flex: 1 1 calc(50% - 2rem); 
+  }
+
+  .features .cardContainer .card {
+    flex: 1 1 calc(50% - 2rem);
+  }
+
+}
+
+/* Mobile media query starts here */
+@media (max-width: 375px) {
+  .container {
+      max-width: 375px;
+      margin: 0 auto;
+      width: 95%;
+      padding: 2rem 0;
+  }
+
+  .heroContents .center {
+  
+      .heading {
+  
+          .heading-txt {
+              font-size: 2.6rem;
+              line-height: 4.4rem; 
+          }
+      }
+  
+      .subContent {
+          font-size: 1rem;
+      }
+  
+      .call-to-actionBtn {
+          margin-top: 1.4rem;
+      }
+    }
+
+    .mobileMockup {
+      // display: flex;
+      // max-width: 375px;
+      display: block;
+      margin-top: 2rem;
+      // margin: 0 auto;
+    }
+
+    .mobileMockup .mockupOne {
+      width: 16rem;
+      height: 32.77631rem;
+      transform: rotate(-15deg);
+      flex-shrink: 0;
+      margin: 0 auto;
+    }
+
+    .how-it-works .cardContainer .card {
+      flex: 1 1 calc(100% - 2rem); 
+    }
+  
+    .features .cardContainer .card {
+      flex: 1 1 calc(1000% - 2rem);
+    }
+
+    .footerContainer, .footer-txt-container {
+      flex-direction: column;
+      gap: 2rem;
+      // align-items: center;
+      // justify-content: center;
+      text-align: center;
+    }
+
+    .footer-txt-container svg {
+      width: 3rem;
+      height: 3rem;
+    }
+
+}
+/* Mobile media query ends here */
