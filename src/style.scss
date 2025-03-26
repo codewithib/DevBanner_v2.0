@@ -459,6 +459,45 @@ body {
     color: rgba($color: #fff, $alpha: 0.88);
     font-weight: 200;
 }
+
+/* Styling of footer starts here */
+
+.footerSection {
+    background: #222;
+}
+
+.footerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    // align-items: center;
+    // justify-content: center;
+}
+.footerContainer .logo {
+    margin-bottom: 1rem;
+}
+
+.footer-txt-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer-txt-container .footer-txt {
+    font-size: 0.8rem;
+    color: rgba($color: #fff, $alpha: 0.8);
+    text-align: center;
+}
+
+.footer-txt-container svg {
+    width: 2rem;
+    height: 2rem;
+}
+
+
+/* Styling of footer ends here */
+
 /* Media query for tablet starts here */
 @media (min-width: 768px) {
     .container {

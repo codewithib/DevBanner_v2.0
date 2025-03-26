@@ -17,8 +17,25 @@ body {
     color: #fff;
 }
 
-button {
+.call-to-actionBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  border: none;
+  background: var(--highlight-color);
+  padding: 1rem 2.5rem;
+  border-radius: 3rem;
+  transition: background-color 0.3s ease;
+  margin: 0 auto;
+  margin-top: 1rem;
   cursor: pointer;
+
+  p {
+      font-size: 1.375rem;
+      font-weight: 500;
+      color: var(--btn-text-color);
+  }
 }
 
 * {
@@ -95,14 +112,14 @@ header {
 
 
 .heroContents .left .mockupOne {
-  width: 11.82025rem;
+  max-width: 11.82025rem;
   height: 29.77006rem;
   transform: rotate(-15deg);
   flex-shrink: 0;
 }
 
 .heroContents .right .mockupTwo {
-  width: 11.82025rem;
+  max-width: 11.82025rem;
   height: 29.77006rem;
   transform: rotate(15deg);
   flex-shrink: 0;
@@ -152,25 +169,7 @@ header {
       color: rgba($color: #fff, $alpha: 0.8);
   }
 
-  .call-to-actionBtn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.7rem;
-      border: none;
-      background: var(--highlight-color);
-      padding: 1rem 2.5rem;
-      border-radius: 3rem;
-      transition: background-color 0.3s ease;
-      margin: 0 auto;
-      margin-top: 1rem;
 
-      p {
-          font-size: 1.375rem;
-          font-weight: 500;
-          color: var(--btn-text-color);
-      }
-  }
 }
 
 .mobileMockup {
@@ -327,28 +326,6 @@ header {
     line-height: 2.25rem;
     color: rgba($color: #fff, $alpha: 0.8);
   }
-
-  .actionContainer .call-to-actionBtn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.7rem;
-    border: none;
-    background: var(--highlight-color);
-    padding: 1rem 2.5rem;
-    border-radius: 3rem;
-    transition: background-color 0.3s ease;
-    // margin: 0 auto;
-    margin-top: 3rem;
-
-    p {
-      font-size: 1.375rem;
-      font-weight: 500;
-      color: var(--btn-text-color);
-    }
-
-  }
-
 }
 /* Call to action section styling ends here */
 
@@ -364,6 +341,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
+  // flex-wrap: wrap;
 }
 
 .footerContainer .logoFooter {
@@ -435,6 +413,20 @@ header {
 }
 
 /* Mobile media query starts here */
+@media (max-width: 478px) {
+  .footerContainer, .footer-txt-container {
+    flex-direction: column;
+    gap: 2rem;
+    // align-items: center;
+    // justify-content: center;
+    text-align: center;
+  }
+
+  .footer-txt-container svg {
+    width: 2rem;
+    height: 2rem;
+  }
+}
 @media (max-width: 375px) {
   .container {
       max-width: 375px;
@@ -511,3 +503,17 @@ header {
 
 }
 /* Mobile media query ends here */
+
+/* Styling of redirecting buttons/link on hover starts here */
+.redirectElement {
+  cursor: pointer;
+}
+
+.redirectElement:hover {
+  background: rgba($color: #fff, $alpha: 0.8);
+}
+
+.call-to-actionBtn.redirectElement:hover {
+  background: rgba($color: #fff, $alpha: 0.8);
+}
+/* Styling of redirecting buttons/link on hover ends here */
