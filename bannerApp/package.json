@@ -2,11 +2,11 @@
   "name": "newbanner",
   "version": "1.0.0",
   "description": "",
-  "main": "banner.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass src/style.scss:dist/banner.css",
-    "sass:watch": "sass --watch src/style.scss:dist/banner.css",
+    "sass": "sass src/style.scss:dist/style.css",
+    "sass:watch": "sass --watch src/style.scss:dist/style.css",
     "dev": "browser-sync start --server --files 'dist/*.css, *.html'",
     "start": "npm-run-all --parallel sass:watch dev"
   },
