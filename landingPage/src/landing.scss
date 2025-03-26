@@ -486,6 +486,16 @@ header {
       flex: 1 1 calc(1000% - 2rem);
     }
 
+    .call-to-action .actionContainer .heading-txt {
+      font-size: 2.6rem;
+      line-height: 4.4rem;
+    }
+
+    .call-to-action .actionContainer .subContent {
+      font-size: 1rem;
+      
+    }
+
     .footerContainer, .footer-txt-container {
       flex-direction: column;
       gap: 2rem;
