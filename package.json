@@ -1,13 +1,12 @@
 {
-  "name": "newbanner",
+  "name": "landingpage",
   "version": "1.0.0",
   "description": "",
-  "main": "banner.js",
+  "main": "landing.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass src/style.scss:dist/banner.css",
-    "sass:watch": "sass --watch src/style.scss:dist/banner.css",
-    "dev": "browser-sync start --server --files 'dist/*.css, *.html'",
+    "sass": "sass src/landing.scss:dist/landing.css",
+    "sass:watch": "sass --watch src/landing.scss:dist/landing.css",
     "start": "npm-run-all --parallel sass:watch dev"
   },
   "keywords": [],
@@ -15,7 +14,6 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "browser-sync": "^3.0.3",
-    "sass": "^1.85.1"
+    "sass": "^1.86.0"
   }
 }
