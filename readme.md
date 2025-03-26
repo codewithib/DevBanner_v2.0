@@ -42,7 +42,7 @@ DevBanner is a web application that allows developers to create customized socia
 
 ## Live Demo
 
-Visit [DevBanner](https://devbanner.vercel.app) to try it out.
+Visit [DevBanner](https://dev-banner.vercel.app) to try it out.
 
 ## Developer
 
