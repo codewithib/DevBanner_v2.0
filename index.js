@@ -10,7 +10,7 @@ const openBannerPage = () => {
     const link = document.createElement("a");
     document.body.appendChild(link);
     
-    link.href = "/bannerApp/banner.html";
+    link.href = "/bannerApp/index.html";
     link.click();
     document.body.removeChild(link);
 }
