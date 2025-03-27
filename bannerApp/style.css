@@ -1,0 +1,594 @@
+/* Importing font */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+/* Adding colors to my variables */
+:root {
+  --font-primary: -apple-system, BlinkMacSystemFont, "SF Compact", "Helvetica Neue", Arial, sans-serif;
+  --font-secondary: "Manrope", sans-serif;
+  --bg-color: #111204;
+  --txt-highlight-color: #B9FD50;
+  --font-color: #FFFFFF;
+  --btn-text-color: #111204;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+html, body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--bg-color);
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-primary), var(--font-secondary);
+}
+
+.container {
+  max-width: 375px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid #fff;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  justify-content: center;
+  max-width: 13rem;
+  margin: 0 auto;
+}
+.logo .icon-wrapper {
+  background: var(--txt-highlight-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+}
+.logo .icon-wrapper .icon {
+  color: var(--btn-text-color);
+  font-weight: 800;
+  font-size: 0.7rem;
+}
+.logo .txt {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.063rem;
+}
+
+.heading {
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.userForm .userDetails {
+  margin: 0.8rem 0;
+}
+.userForm .userDetails label {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+.userForm .userDetails input {
+  width: 100%;
+  padding: 0.35rem;
+  outline: none;
+  border: 0.5px solid rgba(255, 255, 255, 0.4);
+  background: none;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 500;
+  border-radius: 0.4rem;
+}
+.userForm .userDetails input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  opacity: 0.7;
+  font-size: 1.19rem;
+}
+.userForm .userDetails fieldset {
+  border: none;
+}
+.userForm .userDetails fieldset legend {
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+.userForm .userDetails fieldset .socialWrapper {
+  margin-bottom: 0.7rem;
+}
+.userForm .userDetails fieldset .socialWrapper .iconAndInputWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 0.4rem;
+  padding-left: 0.5rem;
+}
+.userForm .userDetails fieldset .socialWrapper .iconAndInputWrapper input {
+  border: none;
+}
+.userForm .errorMessage {
+  color: #f22121;
+}
+
+.stackPreview {
+  display: flex;
+  align-items: center;
+  gap: 0.48rem;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.stackAndIconWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--txt-highlight-color);
+  border-radius: 0.4rem;
+  padding: 0.4rem 0.6rem;
+}
+.stackAndIconWrapper .delBtn {
+  background: none;
+  border: none;
+  color: var(--txt-highlight-color);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-left: 0.1rem;
+}
+
+.stackIcon svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.stackName {
+  text-transform: lowercase;
+  color: var(--txt-highlight-color);
+}
+
+.userDetails.searchWrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid;
+  border-color: rgba(255, 255, 255, 0.6);
+  border-radius: 0.4rem;
+}
+
+.userDetails.searchWrapper .search {
+  border: none;
+}
+
+.userDetails.searchWrapper button {
+  background: none;
+  border: none;
+  margin-right: 1rem;
+}
+
+.userDetails.searchWrapper .search:focus {
+  outline: none;
+  border-color: var(--txt-highlight-color);
+  border-width: 0.1249rem;
+}
+
+.stackSelect {
+  width: 100%;
+  padding: 0.6rem 0;
+  outline: none;
+  font-size: 1rem;
+  cursor: pointer;
+  background: #0d1b2a;
+  appearance: none;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.stackSelect option:not(.disabledStack) {
+  padding: 0.4rem;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.stackSelect .disabledStack {
+  padding: 0.4rem;
+}
+
+.stackSelect option:not(.disabledStack):hover {
+  background: #1F2937;
+  color: var(--txt-highlight-color);
+}
+
+.stackSelect:focus {
+  border-color: var(--txt-highlight-color);
+  outline: none;
+}
+
+.stackSelect option:not(.disabledStack):checked {
+  background: #232040;
+  color: var(--txt-highlight-color);
+}
+
+.countSelected {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+.btn {
+  border: none;
+  color: var(--btn-text-color);
+  width: 100%;
+  background: var(--txt-highlight-color);
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  display: inline-block;
+}
+
+.generateBtn:hover {
+  background: #150B2D;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #fff;
+}
+
+.generateBtn {
+  margin-top: 2rem;
+}
+
+.previewBtn {
+  margin-top: 3rem;
+}
+
+.downloadBtn:hover {
+  background: #150B2D;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #fff;
+}
+
+/* Styling of banner background picker starts here */
+.wrapperGradient {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 0.5rem;
+  margin-top: 1rem;
+}
+.wrapperGradient .headertxt {
+  margin-top: 1.5rem;
+}
+.wrapperGradient .gradientContainer {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.wrapperGradient .gradientContainer .colorDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.wrapperGradient .gradientContainer .txtAndColor {
+  display: flex;
+  align-items: center;
+}
+.wrapperGradient .gradientContainer input {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+.wrapperGradient .gradientContainer .colorCodeOne, .wrapperGradient .gradientContainer .colorCodeTwo {
+  margin-left: 1rem;
+}
+.wrapperGradient .gradientDirection {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.6rem;
+  outline: none;
+  font-size: 1rem;
+  cursor: pointer;
+  background: #0d1b2a;
+  color: white;
+}
+
+/* Styling of banner background picker ends here */
+/* Styling of banner starts here */
+.bannerWrapper {
+  max-width: 375px;
+  height: auto;
+  margin: 0 auto;
+  background-color: #7E22CE;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 2rem;
+}
+.bannerWrapper .fullNameBanner {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 0.3rem;
+}
+.bannerWrapper .fieldBanner {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 0.3rem;
+}
+.bannerWrapper .socialsBannerWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-left: 0.6rem;
+}
+.bannerWrapper .socialsBannerWrapper .twitter, .bannerWrapper .socialsBannerWrapper .github {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+.bannerWrapper .socialsBannerWrapper .twitter svg {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+.bannerWrapper .socialsBannerWrapper .github svg {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+.bannerWrapper .socialsBannerWrapper .twitterBanner, .bannerWrapper .socialsBannerWrapper .githubBanner {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.bannerWrapper .socialsBannerWrapper .line {
+  width: 0.03rem;
+  height: 1rem;
+  background: #fff;
+}
+.bannerWrapper .stacksWrapperBanner {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  align-self: flex-end;
+}
+.bannerWrapper .stackTxt {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.bannerWrapper .stackIconBanner {
+  background: #fff;
+  padding: 0.2rem;
+  border-radius: 0.4rem;
+}
+.bannerWrapper .stackIconBanner svg {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+/* Styling of banner ends here */
+.generatingTxt, .generatedTxt {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.disclaimerTxt {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 200;
+}
+
+/* Styling of footer starts here */
+.footerSection {
+  background: #222;
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footerContainer .logo {
+  margin-bottom: 1rem;
+}
+
+.footer-txt-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-txt-container .footer-txt {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+
+.footer-txt-container svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Styling of footer ends here */
+/* Media query for tablet starts here */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+  .bannerWrapper {
+    max-width: 1500px;
+    height: 500px;
+    background-color: #7E22CE;
+    padding: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .bannerWrapper .fullNameBanner {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .bannerWrapper .fieldBanner {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .bannerWrapper .socialsBannerWrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 1.2rem;
+  }
+  .bannerWrapper .socialsBannerWrapper .twitter, .bannerWrapper .socialsBannerWrapper .github {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+  }
+  .bannerWrapper .socialsBannerWrapper .twitter svg {
+    width: 2rem;
+    height: 2rem;
+  }
+  .bannerWrapper .socialsBannerWrapper .github svg {
+    width: 2rem;
+    height: 2rem;
+  }
+  .bannerWrapper .socialsBannerWrapper .twitterBanner, .bannerWrapper .socialsBannerWrapper .githubBanner {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .bannerWrapper .socialsBannerWrapper .line {
+    width: 0.03rem;
+    height: 1rem;
+    background: #fff;
+  }
+  .bannerWrapper .stacksWrapperBanner {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    align-self: flex-end;
+  }
+  .bannerWrapper .stackTxt {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .bannerWrapper .stackIconBanner {
+    background: #fff;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+  }
+  .bannerWrapper .stackIconBanner svg {
+    width: 3rem;
+    height: 3rem;
+  }
+  .disclaimerTxt {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.88);
+    font-weight: 300;
+  }
+}
+/* Media query for tablet ends here */
+/* Styling of banner on download starts here */
+.bannerDownload {
+  width: 1500px;
+  height: 500px;
+  background-color: #7E22CE;
+  padding: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.bannerDownload .fullNameBanner {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.bannerDownload .fieldBanner {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.bannerDownload .socialsBannerWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 1.2rem;
+}
+.bannerDownload .socialsBannerWrapper .twitter, .bannerDownload .socialsBannerWrapper .github {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.bannerDownload .socialsBannerWrapper .twitter svg {
+  width: 2rem;
+  height: 2rem;
+}
+.bannerDownload .socialsBannerWrapper .github svg {
+  width: 2rem;
+  height: 2rem;
+}
+.bannerDownload .socialsBannerWrapper .twitterBanner, .bannerDownload .socialsBannerWrapper .githubBanner {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.bannerDownload .socialsBannerWrapper .line {
+  width: 0.03rem;
+  height: 1rem;
+  background: #fff;
+}
+.bannerDownload .stacksWrapperBanner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: flex-end;
+}
+.bannerDownload .stackTxt {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.bannerDownload .stackIconBanner {
+  background: #fff;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+}
+.bannerDownload .stackIconBanner svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Styling of banner on download ends here */
